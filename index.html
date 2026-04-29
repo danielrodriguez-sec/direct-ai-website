@@ -2,800 +2,750 @@
 <html lang="en" class="scroll-smooth">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0B1120">
 
-    <title>Direct AI Automation | AI Receptionist for Small Businesses</title>
+  <title>Direct AI Automation | AI Receptionist for Small Businesses</title>
+  <meta name="description" content="AI receptionists and smart automations for local businesses. Never miss a call, capture leads, and automate appointment booking 24/7.">
 
-    <meta name="description"
-        content="AI receptionists and smart automations for local businesses. Never miss a call, capture leads, and automate appointment booking 24/7.">
+  <!-- Fonts: Sora (display) + DM Sans (body) — distinctive, modern, high-trust -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
-        rel="stylesheet">
-
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif']
-                    },
-                    colors: {
-                        navy: '#0B1120',
-                        electric: '#2563EB',
-                        electricHover: '#1D4ED8'
-                    }
-                }
-            }
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Sora', 'sans-serif'],
+            sans: ['DM Sans', 'sans-serif'],
+          },
+          colors: {
+            navy: '#0B1120',
+            'navy-2': '#111B30',
+            ink: '#0F172A',
+            electric: '#2563EB',
+            'electric-hover': '#1D4ED8',
+            'electric-soft': '#EFF4FF',
+          },
+          boxShadow: {
+            'glow': '0 10px 30px -8px rgba(37,99,235,0.45)',
+            'glow-sm': '0 6px 18px -6px rgba(37,99,235,0.4)',
+            'card': '0 1px 2px rgba(15,23,42,0.04), 0 8px 24px -8px rgba(15,23,42,0.08)',
+            'card-hover': '0 4px 8px rgba(15,23,42,0.06), 0 20px 40px -10px rgba(15,23,42,0.12)',
+          },
+          maxWidth: {
+            'container': '1200px',
+          }
         }
-    </script>
+      }
+    }
+  </script>
 
-    <style>
-        .gradient-text {
-            background: linear-gradient(to right, #60A5FA, #2563EB);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-    </style>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-padding-top: 72px; -webkit-text-size-adjust: 100%; }
+    @media (min-width: 768px) { html { scroll-padding-top: 90px; } }
 
+    body {
+      font-family: 'DM Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      letter-spacing: -0.005em;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Sora', sans-serif;
+      letter-spacing: -0.02em;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #60A5FA 0%, #3B82F6 50%, #2563EB 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-bg {
+      background-color: #0B1120;
+      background-image:
+        radial-gradient(ellipse 70% 50% at 75% 5%, rgba(37,99,235,0.25) 0%, transparent 65%),
+        radial-gradient(ellipse 55% 45% at 5% 90%, rgba(59,130,246,0.12) 0%, transparent 60%);
+    }
+
+    /* Hero image: soft fade into background on all edges for seamless blending */
+    .hero-image-mask {
+      mask-image: radial-gradient(ellipse 90% 85% at center, black 45%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 90% 85% at center, black 45%, transparent 100%);
+    }
+
+    .bg-gradient-radial {
+      background-image: radial-gradient(ellipse at center, var(--tw-gradient-stops));
+    }
+
+    .grid-pattern {
+      background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 32px 32px;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 80%);
+    }
+
+    .nav-link {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: #2563EB;
+      transition: color 0.2s;
+      position: relative;
+    }
+    .nav-link:hover { color: #1D4ED8; }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 50%; bottom: -4px;
+      width: 0; height: 2px;
+      background: #2563EB;
+      transition: width 0.25s, left 0.25s;
+    }
+    .nav-link:hover::after { width: 100%; left: 0; }
+
+    .hamburger span {
+      display: block;
+      width: 22px; height: 2px;
+      background: #0F172A;
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.2s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    #mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+    #mobile-menu.open { max-height: 600px; }
+
+    @media (min-width: 768px) {
+      .steps-grid { position: relative; }
+      .steps-grid::before {
+        content: '';
+        position: absolute;
+        top: 32px;
+        left: 12.5%; right: 12.5%;
+        height: 2px;
+        background: linear-gradient(to right,
+          rgba(191,219,254,0) 0%,
+          rgba(147,197,253,0.8) 15%,
+          rgba(147,197,253,0.8) 85%,
+          rgba(191,219,254,0) 100%);
+        z-index: 0;
+      }
+    }
+    .step-circle { position: relative; z-index: 1; }
+
+    .service-card:hover .service-icon {
+      background: #2563EB;
+      color: white;
+      transform: scale(1.05);
+    }
+    .service-icon {
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .featured-glow {
+      box-shadow:
+        0 0 0 1px rgba(37,99,235,0.5),
+        0 24px 60px -12px rgba(37,99,235,0.45);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.875rem 1.25rem;
+      min-height: 48px;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      transition: all 0.2s;
+      white-space: nowrap;
+      line-height: 1.2;
+    }
+    @media (min-width: 640px) {
+      .btn { padding: 0.875rem 1.5rem; }
+    }
+    @media (min-width: 768px) {
+      .btn { padding: 0.875rem 1.75rem; }
+    }
+    .btn-primary {
+      background: #2563EB;
+      color: white;
+      box-shadow: 0 8px 24px -6px rgba(37,99,235,0.5);
+    }
+    .btn-primary:hover {
+      background: #1D4ED8;
+      transform: translateY(-1px);
+      box-shadow: 0 12px 28px -6px rgba(37,99,235,0.55);
+    }
+    .btn-secondary-light {
+      background: rgba(255,255,255,0.08);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+    .btn-secondary-light:hover {
+      background: rgba(255,255,255,0.14);
+      border-color: rgba(255,255,255,0.30);
+    }
+    .btn-outline {
+      border: 1.5px solid #2563EB;
+      color: #2563EB;
+      background: white;
+    }
+    .btn-outline:hover {
+      background: #2563EB;
+      color: white;
+    }
+
+    img { max-width: 100%; height: auto; }
+
+    .section { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+    @media (min-width: 640px) {
+      .section { padding-top: 3rem; padding-bottom: 3rem; }
+    }
+    @media (min-width: 768px) {
+      .section { padding-top: 3.75rem; padding-bottom: 3.75rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      * { animation: none !important; transition: none !important; }
+    }
+
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid #60A5FA;
+      outline-offset: 3px;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 
-<body class="font-sans text-slate-800 bg-slate-50 antialiased">
+<body class="text-slate-800 bg-white antialiased overflow-x-hidden">
 
-    <!-- HEADER -->
+  <!-- HEADER -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-white/95 backdrop-blur-lg border-b border-slate-200/70 shadow-sm">
+    <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-[64px] md:h-[80px]">
 
-    <header class="fixed w-full bg-white/90 backdrop-blur-md z-50 border-b border-slate-200">
+        <a href="#" class="flex-shrink-0" aria-label="Direct AI Automation Home">
+          <img src="logo.png" alt="Direct AI Automation" class="h-10 md:h-16 w-auto object-contain">
+        </a>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav class="hidden md:flex items-center gap-9" aria-label="Primary">
+          <a href="#how-it-works" class="nav-link">How It Works</a>
+          <a href="#services" class="nav-link">Services</a>
+          <a href="#industries" class="nav-link">Who We Help</a>
+          <a href="#pricing" class="nav-link">Pricing</a>
+        </nav>
 
-            <div class="flex justify-between items-center h-24">
+        <a href="#contact" class="hidden md:inline-flex btn btn-primary !min-h-[44px] !py-2.5 !px-6 !text-sm">
+          Book a Demo
+        </a>
 
-                <div class="flex-shrink-0">
-
-    <img src="logo.png"
-         alt="Direct AI Automation Logo"
-          class="h-20 w-auto object-contain">
-
-</div>
-
-                <!-- DESKTOP NAV -->
-
-                <nav class="hidden md:flex space-x-8">
-
-                    <a href="#how-it-works"
-                        class="text-slate-600 hover:text-electric font-medium transition">
-                        How It Works
-                    </a>
-
-                    <a href="#services"
-                        class="text-slate-600 hover:text-electric font-medium transition">
-                        Services
-                    </a>
-
-                    <a href="#industries"
-                        class="text-slate-600 hover:text-electric font-medium transition">
-                        Who We Help
-                    </a>
-
-                    <a href="#pricing"
-                        class="text-slate-600 hover:text-electric font-medium transition">
-                        Pricing
-                    </a>
-
-                </nav>
-
-                <!-- DESKTOP CTA -->
-
-                <div class="hidden md:flex">
-
-                    <a href="#contact"
-                        class="bg-electric hover:bg-electricHover text-white text-center px-8 py-3 rounded-full font-semibold transition shadow-lg shadow-blue-500/40">
-
-                        Book a Demo
-
-                    </a>
-
-                </div>
-
-                <!-- MOBILE CTA -->
-
-                <a href="#contact"
-                    class="md:hidden bg-electric hover:bg-electricHover text-white px-5 py-2.5 rounded-full text-sm font-semibold transition shadow-lg shadow-blue-500/40">
-
-                    Demo
-
-                </a>
-
-            </div>
-
+        <div class="flex md:hidden items-center gap-2">
+          <a href="#contact" class="btn btn-primary !min-h-[40px] !py-2 !px-4 !text-sm">Demo</a>
+          <button id="menu-btn" class="hamburger flex flex-col gap-[5px] p-2.5 -mr-2" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+            <span></span><span></span><span></span>
+          </button>
         </div>
 
-    </header>
-
-
-    <!-- HERO -->
-
-    <section class="relative pt-28 pb-10 lg:pt-32 lg:pb-12 overflow-hidden bg-navy text-white">
-
-        <div class="absolute top-0 right-0 -mr-40 -mt-40 w-96 h-96 rounded-full bg-blue-600 blur-3xl opacity-20">
-        </div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-
-            <div class="grid lg:grid-cols-[1.2fr_1fr] gap-12 items-center">
-
-                <!-- LEFT SIDE: TEXT + BUTTONS -->
-                <div>
-
-                  
-                <h1 class="text-4xl md:text-5xl lg:text-[48px] font-bold leading-tight mb-6">
-
-                    AI Automation That Helps
-                    <br>
-
-                    <span class="gradient-text">
-                        Small Businesses Grow
-                    </span>
-
-                </h1>
-
-					<p class="text-lg md:text-xl text-slate-300 mb-8 max-w-xl leading-relaxed">
-
-    24/7 AI receptionists and smart automations that answer calls,
-    capture leads, respond to customers, and book appointments automatically.
-
-					</p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-
-                        <a href="#contact"
-                            class="bg-electric hover:bg-electricHover text-white text-center px-8 py-3 rounded-full font-semibold transition shadow-lg shadow-blue-500/40">
-
-                            Book a Demo
-
-                        </a>
-
-                        <a href="#how-it-works"
-                            class="bg-electric hover:bg-electricHover text-white text-center px-8 py-3 rounded-full font-semibold transition shadow-lg shadow-blue-500/40">
-
-                            See How It Works
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-                <!-- RIGHT SIDE: IMAGE -->
-                <div class="hidden lg:flex justify-center items-start pt-4">
-
-                    <img src="image8.png"
-                         alt="AI Automation for Small Businesses"
-                         class="w-full max-w-lg xl:max-w-xl object-contain rounded-2xl mx-auto shadow-2xl shadow-blue-900/20">
-
-                </div>
-
-                <!-- BENEFIT CHECKMARKS - EVENLY SPACED ACROSS PAGE -->
-                <div class="lg:col-span-2 grid grid-cols-2 md:grid-cols-4 gap-3 text-sm text-slate-400 font-medium mt-6">
-
-                    <span class="text-center">✓ 24/7 Availability</span>
-                    <span class="text-center">✓ Instant Responses</span>
-                    <span class="text-center">✓ Multilingual Capable</span>
-                    <span class="text-center">✓ Local Business Focused</span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- INDUSTRIES -->
-
-    <!-- NYC POSITIONING SECTION -->
-
-<section id="industries" class="py-10 bg-navy text-white">
-
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">
-            Helping Small Businesses Grow with AI Automation
-        </h2>
-
-        <p class="text-white/85 text-lg max-w-2xl mx-auto mb-4 leading-relaxed">
-
-            In New York City, competition moves fast. When a customer cannot reach a business immediately, they often move on to the next option.
-
-        </p>
-
-        <p class="text-white/85 text-lg max-w-2xl mx-auto leading-relaxed">
-
-            Direct AI Automation helps small businesses respond instantly, capture more leads, and automate customer communication 24/7.
-
-        </p>
-
+      </div>
     </div>
 
-</section>
+    <div id="mobile-menu" class="md:hidden bg-white border-t border-slate-200">
+      <nav class="px-5 py-4 flex flex-col gap-1" aria-label="Mobile">
+        <a href="#how-it-works" class="py-3 text-slate-700 font-medium border-b border-slate-100" onclick="closeMenu()">How It Works</a>
+        <a href="#services" class="py-3 text-slate-700 font-medium border-b border-slate-100" onclick="closeMenu()">Services</a>
+        <a href="#industries" class="py-3 text-slate-700 font-medium border-b border-slate-100" onclick="closeMenu()">Who We Help</a>
+        <a href="#pricing" class="py-3 text-slate-700 font-medium border-b border-slate-100" onclick="closeMenu()">Pricing</a>
+        <a href="#contact" class="btn btn-primary w-full mt-4 mb-2" onclick="closeMenu()">Book A Free Demo</a>
+      </nav>
+    </div>
+  </header>
 
 
-    <!-- HOW IT WORKS -->
+  <!-- HERO -->
+  <section class="relative hero-bg text-white overflow-hidden pt-[88px] pb-14 md:pt-[120px] md:pb-20">
 
-    <section id="how-it-works" class="py-10 bg-white">
+    <div class="absolute inset-0 grid-pattern pointer-events-none"></div>
+    <div class="absolute -top-32 -right-32 w-[480px] h-[480px] rounded-full bg-blue-600/15 blur-[100px] pointer-events-none"></div>
+    <div class="absolute -bottom-40 -left-40 w-[420px] h-[420px] rounded-full bg-indigo-500/10 blur-[100px] pointer-events-none"></div>
 
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="relative max-w-container mx-auto px-4 sm:px-6 lg:px-8 z-10">
 
-            <div class="text-center mb-7">
+      <div class="grid lg:grid-cols-[1.1fr_1fr] gap-8 lg:gap-12 items-center">
 
-                <h2 class="text-3xl md:text-4xl font-bold text-navy tracking-tight">
-                    How We Automate Your Business
-                </h2>
+        <div class="reveal text-center lg:text-left">
+          <!-- Status badge -->
+          <div class="inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-500/10 px-3 py-1.5 text-[11px] sm:text-xs md:text-sm font-medium text-blue-200 mb-5 md:mb-6">
+            <span class="relative flex h-1.5 w-1.5">
+              <span class="absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75 animate-ping"></span>
+              <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-blue-400"></span>
+            </span>
+            Now serving NYC small businesses
+          </div>
 
+          <h1 class="font-display font-extrabold leading-[1.15] tracking-tight text-[1.75rem] sm:text-4xl lg:text-[2.25rem] xl:text-[2.625rem] mb-4 md:mb-5">
+            <span class="block">AI Automation That Helps</span>
+            <span class="gradient-text block">Small Businesses Grow</span>
+          </h1>
+
+          <p class="text-[15px] sm:text-base md:text-lg text-slate-300 leading-relaxed max-w-lg mx-auto lg:mx-0 mb-7 md:mb-9">
+            24/7 AI receptionists and smart automations that answer calls, capture leads, and book appointments — all on autopilot.
+          </p>
+
+          <!-- Mobile image: shows ABOVE buttons on mobile only -->
+          <div class="lg:hidden mb-8 reveal">
+            <div class="relative max-w-sm mx-auto">
+              <div class="absolute inset-0 bg-gradient-radial from-blue-500/30 via-blue-600/10 to-transparent blur-2xl"></div>
+              <div class="hero-image-mask relative">
+                <img src="image8.png" alt="AI automation preview" class="w-full block" loading="eager" fetchpriority="high">
+              </div>
             </div>
+          </div>
 
-            <div class="grid md:grid-cols-4 gap-7 lg:gap-8">
+          <div class="flex flex-col sm:flex-row gap-3 sm:justify-center lg:justify-start">
+            <a href="#contact" class="btn btn-primary w-full sm:w-auto">Book A Free Demo</a>
+            <a href="#how-it-works" class="btn btn-primary w-full sm:w-auto">
+              See How It Works
+              <svg class="ml-1.5 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+          </div>
 
-                <div class="text-center max-w-xs mx-auto">
-
-                    <div
-                        class="w-16 h-16 bg-blue-100 text-electric rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-5">
-
-                        1
-
-                    </div>
-
-                    <h4 class="font-bold text-lg mb-3 text-navy">
-
-                        Book a Consultation
-
-                    </h4>
-
-                    <p class="text-sm text-slate-600 leading-relaxed">
-
-                        We review your communication gaps and customer workflow.
-
-                    </p>
-
-                </div>
-
-
-                <div class="text-center max-w-xs mx-auto">
-
-                    <div
-                        class="w-16 h-16 bg-blue-100 text-electric rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-5">
-
-                        2
-
-                    </div>
-
-                    <h4 class="font-bold text-lg mb-3 text-navy">
-
-                        We Learn Your Business
-
-                    </h4>
-
-                    <p class="text-sm text-slate-600 leading-relaxed">
-
-                        We train the AI on your FAQs, services, and lead process.
-
-                    </p>
-
-                </div>
-
-
-                <div class="text-center max-w-xs mx-auto">
-
-                    <div
-                        class="w-16 h-16 bg-blue-100 text-electric rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-5">
-
-                        3
-
-                    </div>
-
-                    <h4 class="font-bold text-lg mb-3 text-navy">
-
-                        We Build Your Automation
-
-                    </h4>
-
-                    <p class="text-sm text-slate-600 leading-relaxed">
-
-                        We connect your phone, chat, calendar, and workflows.
-
-                    </p>
-
-                </div>
-
-
-                <div class="text-center max-w-xs mx-auto">
-
-                    <div
-                        class="w-16 h-16 bg-blue-100 text-electric rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-5">
-
-                        4
-
-                    </div>
-
-                    <h4 class="font-bold text-lg mb-3 text-navy">
-
-                        Go Live
-
-                    </h4>
-
-                    <p class="text-sm text-slate-600 leading-relaxed">
-
-                        Your AI assistant starts handling leads automatically.
-
-                    </p>
-
-                </div>
-
-            </div>
-
+          <!-- Trust badges -->
+          <div class="mt-7 md:mt-8 grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-2.5 text-xs sm:text-sm text-slate-400 max-w-xl mx-auto lg:mx-0">
+            <span class="flex items-center gap-1.5"><span class="text-blue-400">✓</span> 24/7 Available</span>
+            <span class="flex items-center gap-1.5"><span class="text-blue-400">✓</span> Instant Replies</span>
+            <span class="flex items-center gap-1.5"><span class="text-blue-400">✓</span> Multilingual</span>
+            <span class="flex items-center gap-1.5"><span class="text-blue-400">✓</span> NYC-Focused</span>
+          </div>
         </div>
 
-    </section>
-
-
-    <!-- SERVICES -->
-
-    <section id="services" class="py-10 bg-slate-50">
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-            <h2 class="text-3xl md:text-4xl font-bold text-navy text-center mb-5 tracking-tight">
-
-                Complete Lead Capture & Automation
-
-            </h2>
-
-            <div class="grid md:grid-cols-3 gap-5">
-
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 h-full">
-
-                    <h3 class="text-xl font-bold text-navy mb-3">
-
-                        AI Voice Receptionist
-
-                    </h3>
-
-                    <p class="text-slate-600 text-sm">
-
-                        A natural-sounding AI assistant that answers calls,
-                        qualifies leads, and routes inquiries.
-
-                    </p>
-
-                </div>
-
-
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 h-full">
-
-                    <h3 class="text-xl font-bold text-navy mb-3">
-
-                        Website Chat Assistant
-
-                    </h3>
-
-                    <p class="text-slate-600 text-sm">
-
-                        Engage visitors instantly and convert traffic into leads.
-
-                    </p>
-
-                </div>
-
-
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 h-full">
-
-                    <h3 class="text-xl font-bold text-navy mb-3">
-
-                        Automated Appointment Booking
-
-                    </h3>
-
-                    <p class="text-slate-600 text-sm">
-
-                        Book appointments automatically with calendar integrations.
-
-                    </p>
-
-                </div>
-
+        <!-- Desktop image - blended seamlessly into background -->
+        <div class="hidden lg:flex justify-center items-center reveal" style="transition-delay:0.1s">
+          <div class="relative w-full max-w-[560px]">
+            <!-- Atmospheric glow behind image -->
+            <div class="absolute inset-0 bg-gradient-radial from-blue-500/30 via-blue-600/10 to-transparent blur-3xl"></div>
+            <!-- Image with soft edge mask blending into background -->
+            <div class="hero-image-mask relative">
+              <img src="image8.png" alt="AI automation dashboard preview" class="w-full block" loading="eager" fetchpriority="high">
             </div>
-
+          </div>
         </div>
 
-    </section>
+      </div>
+    </div>
+  </section>
 
 
-    <!-- RESULTS -->
+  <!-- INDUSTRIES / NYC -->
+  <section id="industries" class="relative bg-navy-2 text-white section overflow-hidden">
 
-    <section class="py-20 bg-white relative overflow-hidden">
+    <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-500/40 to-transparent"></div>
 
-        <div class="absolute inset-0 bg-gradient-to-b from-white via-slate-50/70 to-white pointer-events-none"></div>
+    <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center reveal">
+        <div class="inline-flex items-center rounded-full border border-blue-400/25 bg-blue-500/10 px-3.5 py-1.5 text-xs font-semibold text-blue-300 uppercase tracking-wider mb-5">
+          Built for Local Businesses
+        </div>
+        <h2 class="text-[1.625rem] sm:text-3xl md:text-[2.25rem] lg:text-[40px] font-bold leading-tight mb-5">
+          Helping NYC Small Businesses Grow With AI Automation
+        </h2>
+        <p class="text-slate-300/90 text-base md:text-lg leading-relaxed mb-4">
+          In New York City, competition moves fast. When a customer can't reach a business immediately, they often move on to the next option.
+        </p>
+        <p class="text-slate-300/90 text-base md:text-lg leading-relaxed">
+          Direct AI Automation helps small businesses respond instantly, capture more leads, and automate customer communication — 24 hours a day, 7 days a week.
+        </p>
+      </div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-
-            <div class="text-center max-w-4xl mx-auto mb-12">
-
-                <div class="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-electric mb-5">
-                    Business Growth Outcomes
-                </div>
-
-                <h2 class="text-4xl md:text-5xl font-bold text-navy tracking-tight leading-tight mb-6">
-
-                    Built to Help Small Businesses
-                    <span class="gradient-text"> Capture More Leads </span>
-                    and Grow Revenue
-
-                </h2>
-
-                <p class="text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto">
-
-                    Our AI automation systems help local businesses respond instantly,
-                    reduce missed opportunities, and convert more inquiries into paying customers.
-
-                </p>
-
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-
-                <div class="group bg-gradient-to-br from-white to-slate-50 border border-slate-200 rounded-3xl p-7 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
-
-                    <div class="flex items-start gap-5">
-
-                        <div class="w-12 h-12 rounded-2xl bg-blue-100 flex items-center justify-center text-electric text-xl font-bold shrink-0 group-hover:bg-electric group-hover:text-white transition">
-                            ✓
-                        </div>
-
-                        <div>
-                            <h3 class="font-bold text-navy text-lg mb-1">
-                                Fewer Missed Opportunities
-                            </h3>
-
-                            <p class="text-slate-500 text-sm leading-relaxed">
-                                Capture more inquiries before prospects move on to a competitor.
-                            </p>
-                        </div>
-
-                    </div>
-
-                </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mt-12 max-w-4xl mx-auto reveal">
+        <div class="rounded-xl border border-white/10 bg-white/[0.03] px-3 py-3 text-center text-sm font-medium text-slate-300 hover:border-blue-400/40 hover:bg-blue-500/10 hover:text-white transition-all duration-200">🏥 &nbsp;Medical</div>
+        <div class="rounded-xl border border-white/10 bg-white/[0.03] px-3 py-3 text-center text-sm font-medium text-slate-300 hover:border-blue-400/40 hover:bg-blue-500/10 hover:text-white transition-all duration-200">⚖️ &nbsp;Legal</div>
+        <div class="rounded-xl border border-white/10 bg-white/[0.03] px-3 py-3 text-center text-sm font-medium text-slate-300 hover:border-blue-400/40 hover:bg-blue-500/10 hover:text-white transition-all duration-200">🔧 &nbsp;HVAC</div>
+        <div class="rounded-xl border border-white/10 bg-white/[0.03] px-3 py-3 text-center text-sm font-medium text-slate-300 hover:border-blue-400/40 hover:bg-blue-500/10 hover:text-white transition-all duration-200">💆 &nbsp;Wellness</div>
+        <div class="rounded-xl border border-white/10 bg-white/[0.03] px-3 py-3 text-center text-sm font-medium text-slate-300 hover:border-blue-400/40 hover:bg-blue-500/10 hover:text-white transition-all duration-200">🏠 &nbsp;Real Estate</div>
+        <div class="rounded-xl border border-white/10 bg-white/[0.03] px-3 py-3 text-center text-sm font-medium text-slate-300 hover:border-blue-400/40 hover:bg-blue-500/10 hover:text-white transition-all duration-200">🍽️ &nbsp;Restaurants</div>
+      </div>
+    </div>
+  </section>
 
 
-                <div class="group bg-gradient-to-br from-white to-slate-50 border border-slate-200 rounded-3xl p-7 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works" class="bg-white section">
+    <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
 
-                    <div class="flex items-start gap-5">
+      <div class="text-center mb-7 reveal">
+        <div class="inline-flex items-center rounded-full bg-electric-soft border border-blue-200 px-3.5 py-1.5 text-xs font-semibold text-electric uppercase tracking-wider mb-5">
+          Simple Setup Process
+        </div>
+        <h2 class="text-[1.625rem] sm:text-3xl md:text-[2.25rem] lg:text-[40px] font-bold text-navy">
+          How We Automate Your Business
+        </h2>
+        <p class="mt-4 text-slate-500 text-base md:text-lg max-w-xl mx-auto">
+          From first conversation to fully automated lead capture in days — not months.
+        </p>
+      </div>
 
-                        <div class="w-12 h-12 rounded-2xl bg-blue-100 flex items-center justify-center text-electric text-xl font-bold shrink-0 group-hover:bg-electric group-hover:text-white transition">
-                            ✓
-                        </div>
+      <div class="steps-grid grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-4 max-w-4xl mx-auto">
 
-                        <div>
-                            <h3 class="font-bold text-navy text-lg mb-1">
-                                Faster Lead Response Times
-                            </h3>
-
-                            <p class="text-slate-500 text-sm leading-relaxed">
-                                Respond instantly to calls, texts, and website inquiries 24/7.
-                            </p>
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="group bg-gradient-to-br from-white to-slate-50 border border-slate-200 rounded-3xl p-7 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
-
-                    <div class="flex items-start gap-5">
-
-                        <div class="w-12 h-12 rounded-2xl bg-blue-100 flex items-center justify-center text-electric text-xl font-bold shrink-0 group-hover:bg-electric group-hover:text-white transition">
-                            ✓
-                        </div>
-
-                        <div>
-                            <h3 class="font-bold text-navy text-lg mb-1">
-                                More Booked Appointments
-                            </h3>
-
-                            <p class="text-slate-500 text-sm leading-relaxed">
-                                Turn more customer conversations into scheduled appointments.
-                            </p>
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="group bg-gradient-to-br from-white to-slate-50 border border-slate-200 rounded-3xl p-7 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
-
-                    <div class="flex items-start gap-5">
-
-                        <div class="w-12 h-12 rounded-2xl bg-blue-100 flex items-center justify-center text-electric text-xl font-bold shrink-0 group-hover:bg-electric group-hover:text-white transition">
-                            ✓
-                        </div>
-
-                        <div>
-                            <h3 class="font-bold text-navy text-lg mb-1">
-                                Increased Customer Conversion Potential
-                            </h3>
-
-                            <p class="text-slate-500 text-sm leading-relaxed">
-                                Improve follow-up consistency and convert more inquiries into paying customers.
-                            </p>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
+        <div class="text-center reveal">
+          <div class="step-circle w-16 h-16 mx-auto mb-5 rounded-full bg-white border-2 border-blue-100 text-electric flex items-center justify-center text-xl font-bold shadow-card">1</div>
+          <h4 class="font-bold text-base text-navy mb-2">Book a Consultation</h4>
+          <p class="text-sm text-slate-500 leading-relaxed">We review your communication gaps and customer workflow.</p>
         </div>
 
-    </section>
-
-
-
-    <!-- PRICING -->
-
-    <section id="pricing" class="py-10 bg-slate-50">
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-            <div class="text-center mb-7">
-
-                <h2 class="text-3xl md:text-4xl font-bold text-navy mb-3 tracking-tight">
-
-                    Transparent Pricing
-
-                </h2>
-
-                <p class="text-slate-600 max-w-2xl mx-auto">
-
-                    Simple pricing designed for local businesses.
-                    Usage fees for SMS, voice minutes,
-                    and third-party AI/API costs may apply.
-
-                </p>
-
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto">
-
-                <!-- STARTER -->
-
-                <div class="bg-white p-7 rounded-3xl border border-slate-200 text-center shadow-sm hover:shadow-xl transition duration-300 flex flex-col h-full">
-
-                    <h3 class="text-xl font-bold text-navy mb-2">
-
-                        Starter
-
-                    </h3>
-
-                    <p class="text-slate-500 text-sm mb-6">
-
-                        For solo operators and small local businesses.
-
-                    </p>
-
-                    <div class="mb-4">
-
-                        <span class="text-4xl font-bold text-navy">$299</span>
-                        <span class="text-slate-500">/mo</span>
-
-                    </div>
-
-                    <ul class="text-sm text-slate-600 space-y-3 mb-8 text-left flex-grow">
-
-                        <li>✓ AI Website Chat Assistant</li>
-                        <li>✓ Basic Lead Capture</li>
-                        <li>✓ Automated FAQ Responses</li>
-                        <li>✓ Email Notifications</li>
-                        <li>
-                            <span class="text-xs text-slate-400">
-                                +$500 one-time setup
-                            </span>
-                        </li>
-
-                    </ul>
-
-                    <a href="#contact"
-                        class="mt-auto block w-full py-3 rounded-full bg-electric hover:bg-electricHover text-white font-semibold transition shadow-lg shadow-blue-500/40 hover:scale-[1.02]">
-
-                        Get Started
-
-                    </a>
-
-                </div>
-
-
-                <!-- GROWTH -->
-
-                <div
-                    class="bg-navy p-7 rounded-3xl border border-blue-900 text-center shadow-xl shadow-blue-900/20 hover:-translate-y-1 transition duration-300 flex flex-col h-full">
-
-                    <div
-                        class="bg-electric text-white text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full inline-block mb-4">
-
-                        Most Popular
-
-                    </div>
-
-                    <h3 class="text-xl font-bold text-white mb-2">
-
-                        Growth
-
-                    </h3>
-
-                    <p class="text-slate-400 text-sm mb-6">
-
-                        For busy service businesses handling high call volume.
-
-                    </p>
-
-                    <div class="mb-4">
-
-                        <span class="text-4xl font-bold text-white">$599</span>
-                        <span class="text-slate-400">/mo</span>
-
-                    </div>
-
-                    <ul class="text-sm text-slate-300 space-y-3 mb-8 text-left flex-grow">
-
-                        <li>✓ Everything in Starter</li>
-                        <li>✓ 24/7 AI Voice Receptionist</li>
-                        <li>✓ SMS Follow-Up Automation</li>
-                        <li>✓ Appointment Booking Integration</li>
-                        <li>✓ Lead Qualification Workflows</li>
-
-                        <li>
-                            <span class="text-xs text-slate-500">
-                                +$900 one-time setup
-                            </span>
-                        </li>
-
-                    </ul>
-
-                    <a href="#contact"
-                        class="mt-auto block w-full py-3 rounded-full bg-electric text-white font-semibold hover:bg-electricHover transition shadow-lg shadow-blue-500/40 hover:scale-[1.02]">
-
-                        Get Started
-
-                    </a>
-
-                </div>
-
-
-                <!-- PRO -->
-
-                <div class="bg-white p-7 rounded-3xl border border-slate-200 text-center shadow-sm hover:shadow-xl transition duration-300 flex flex-col h-full">
-
-                    <h3 class="text-xl font-bold text-navy mb-2">
-
-                        Pro
-
-                    </h3>
-
-                    <p class="text-slate-500 text-sm mb-6">
-
-                        Advanced automation and custom workflow integrations.
-
-                    </p>
-
-                    <div class="mb-6">
-
-                        <span class="text-4xl font-bold text-navy">$999</span>
-                        <span class="text-slate-500">/mo</span>
-
-                    </div>
-
-                    <ul class="text-sm text-slate-600 space-y-3 mb-8 text-left flex-grow">
-
-                        <li>✓ Everything in Growth</li>
-                        <li>✓ CRM Integrations</li>
-                        <li>✓ Advanced AI Workflows</li>
-                        <li>✓ Multi-Channel Automations</li>
-                        <li>✓ Priority Support</li>
-
-                        <li>
-                            <span class="text-xs text-slate-400">
-                                +$1500 one-time setup
-                            </span>
-                        </li>
-
-                    </ul>
-
-                    <a href="#contact"
-                        class="mt-auto block w-full py-3 rounded-full bg-electric hover:bg-electricHover text-white font-semibold transition shadow-lg shadow-blue-500/40 hover:scale-[1.02]">
-
-                        Get Started
-
-                    </a>
-
-                </div>
-
-            </div>
-
+        <div class="text-center reveal" style="transition-delay:0.08s">
+          <div class="step-circle w-16 h-16 mx-auto mb-5 rounded-full bg-white border-2 border-blue-100 text-electric flex items-center justify-center text-xl font-bold shadow-card">2</div>
+          <h4 class="font-bold text-base text-navy mb-2">We Learn Your Business</h4>
+          <p class="text-sm text-slate-500 leading-relaxed">We train the AI on your FAQs, services, and lead process.</p>
         </div>
 
-    </section>
-
-
-    <!-- CONTACT -->
-
-    <section id="contact" class="py-10 bg-electric text-white text-center">
-
-        <div class="max-w-3xl mx-auto px-4">
-
-            <h2 class="text-3xl md:text-4xl font-bold mb-3">
-
-                Stop missing opportunities.
-                Start capturing every lead.
-
-            </h2>
-
-            <p class="text-blue-100 text-lg mb-5">
-
-                Book a live AI automation demo today.
-
-            </p>
-
-            <div class="max-w-md mx-auto bg-white p-4 rounded-2xl shadow-2xl text-left">
-
-                <a href="https://calendly.com/YOUR-LINK"
-                    class="w-full block text-center bg-electric hover:bg-electricHover text-white font-semibold py-3 rounded-lg transition shadow-lg shadow-blue-500/40">
-
-                    Book Your Demo
-
-                </a>
-
-            </div>
-
+        <div class="text-center reveal" style="transition-delay:0.16s">
+          <div class="step-circle w-16 h-16 mx-auto mb-5 rounded-full bg-white border-2 border-blue-100 text-electric flex items-center justify-center text-xl font-bold shadow-card">3</div>
+          <h4 class="font-bold text-base text-navy mb-2">We Build Your Automation</h4>
+          <p class="text-sm text-slate-500 leading-relaxed">We connect your phone, chat, calendar, and workflows.</p>
         </div>
 
-    </section>
-
-
-      <!-- FOOTER -->
-
-    <footer class="bg-white pt-8 pb-4 border-t border-slate-200 text-slate-800 text-sm">
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-            <div class="mb-6">
-
-                <img src="logo.png"
-                     alt="Direct AI Automation Logo"
-                     class="h-16 w-auto object-contain">
-
-            </div>
-
-            <p class="mb-2 max-w-sm text-black">
-
-                AI receptionists and smart automations for local businesses.
-
-            </p>
-
-            <p class="text-black">contact@directaiautomation.com</p>
-
-            <div class="text-center pt-3 border-t border-slate-300 mt-3">
-
-                <p>&copy; 2026 Direct AI Automation. All rights reserved.</p>
-
-            </div>
-
+        <div class="text-center reveal" style="transition-delay:0.24s">
+          <div class="step-circle w-16 h-16 mx-auto mb-5 rounded-full bg-white border-2 border-blue-100 text-electric flex items-center justify-center text-xl font-bold shadow-card">4</div>
+          <h4 class="font-bold text-base text-navy mb-2">Go Live</h4>
+          <p class="text-sm text-slate-500 leading-relaxed">Your AI assistant starts handling leads automatically.</p>
         </div>
 
-    </footer>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SERVICES -->
+  <section id="services" class="bg-slate-50 section">
+    <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-7 reveal">
+        <h2 class="text-[1.625rem] sm:text-3xl md:text-[2.25rem] lg:text-[40px] font-bold text-navy mb-4">
+          Complete Lead Capture &amp; Automation
+        </h2>
+        <p class="text-slate-500 max-w-xl mx-auto text-base md:text-lg">
+          Every channel covered — so you never miss a customer inquiry.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+
+        <article class="service-card group bg-white p-6 rounded-2xl border border-slate-200/70 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 reveal">
+          <div class="service-icon w-11 h-11 rounded-xl bg-electric-soft text-electric flex items-center justify-center text-lg mb-4">📞</div>
+          <h3 class="font-bold text-navy text-lg mb-2">AI Voice Receptionist</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">
+            A natural-sounding AI assistant that answers calls, qualifies leads, and routes inquiries — 24/7.
+          </p>
+        </article>
+
+        <article class="service-card group bg-white p-6 rounded-2xl border border-slate-200/70 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 reveal" style="transition-delay:0.08s">
+          <div class="service-icon w-11 h-11 rounded-xl bg-electric-soft text-electric flex items-center justify-center text-lg mb-4">💬</div>
+          <h3 class="font-bold text-navy text-lg mb-2">Website Chat Assistant</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">
+            Engage visitors instantly, answer common questions, and convert website traffic into booked leads.
+          </p>
+        </article>
+
+        <article class="service-card group bg-white p-6 rounded-2xl border border-slate-200/70 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 reveal" style="transition-delay:0.16s">
+          <div class="service-icon w-11 h-11 rounded-xl bg-electric-soft text-electric flex items-center justify-center text-lg mb-4">📅</div>
+          <h3 class="font-bold text-navy text-lg mb-2">Automated Booking</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">
+            Book appointments automatically with real-time calendar integration — no back-and-forth needed.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- OUTCOMES -->
+  <section class="bg-white section">
+    <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center max-w-3xl mx-auto mb-7 reveal">
+        <div class="inline-flex items-center rounded-full bg-electric-soft border border-blue-200 px-3.5 py-1.5 text-xs font-semibold text-electric uppercase tracking-wider mb-5">
+          Business Growth Outcomes
+        </div>
+        <h2 class="text-[1.625rem] sm:text-3xl md:text-[2.25rem] lg:text-[40px] font-bold text-navy leading-tight mb-5">
+          Built to Help Small Businesses <span class="gradient-text">Capture More Leads</span> and Grow Revenue
+        </h2>
+        <p class="text-slate-500 text-base md:text-lg leading-relaxed">
+          Our AI automation systems help local businesses respond instantly, reduce missed opportunities, and convert more inquiries into paying customers.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-5 max-w-4xl mx-auto">
+
+        <div class="group bg-gradient-to-br from-white to-slate-50/80 border border-slate-200 rounded-2xl p-6 shadow-card hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-300 reveal">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-electric-soft text-electric flex items-center justify-center font-bold shrink-0 group-hover:bg-electric group-hover:text-white transition">✓</div>
+            <div>
+              <h3 class="font-semibold text-navy mb-1">Fewer Missed Opportunities</h3>
+              <p class="text-slate-500 text-sm leading-relaxed">Capture more inquiries before prospects move on to a competitor.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="group bg-gradient-to-br from-white to-slate-50/80 border border-slate-200 rounded-2xl p-6 shadow-card hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-300 reveal" style="transition-delay:0.08s">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-electric-soft text-electric flex items-center justify-center font-bold shrink-0 group-hover:bg-electric group-hover:text-white transition">✓</div>
+            <div>
+              <h3 class="font-semibold text-navy mb-1">Faster Lead Response Times</h3>
+              <p class="text-slate-500 text-sm leading-relaxed">Respond instantly to calls, texts, and website inquiries 24/7.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="group bg-gradient-to-br from-white to-slate-50/80 border border-slate-200 rounded-2xl p-6 shadow-card hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-300 reveal" style="transition-delay:0.16s">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-electric-soft text-electric flex items-center justify-center font-bold shrink-0 group-hover:bg-electric group-hover:text-white transition">✓</div>
+            <div>
+              <h3 class="font-semibold text-navy mb-1">More Booked Appointments</h3>
+              <p class="text-slate-500 text-sm leading-relaxed">Turn more customer conversations into scheduled appointments.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="group bg-gradient-to-br from-white to-slate-50/80 border border-slate-200 rounded-2xl p-6 shadow-card hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-300 reveal" style="transition-delay:0.24s">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-electric-soft text-electric flex items-center justify-center font-bold shrink-0 group-hover:bg-electric group-hover:text-white transition">✓</div>
+            <div>
+              <h3 class="font-semibold text-navy mb-1">Increased Conversion Potential</h3>
+              <p class="text-slate-500 text-sm leading-relaxed">Improve follow-up consistency and convert more inquiries into paying customers.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PRICING -->
+  <section id="pricing" class="bg-slate-50 section">
+    <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-7 reveal">
+        <h2 class="text-[1.625rem] sm:text-3xl md:text-[2.25rem] lg:text-[40px] font-bold text-navy mb-4">
+          Transparent Pricing
+        </h2>
+        <p class="text-slate-500 max-w-xl mx-auto text-base md:text-lg leading-relaxed">
+          Simple pricing designed for local businesses. Usage fees for SMS, voice minutes, and third-party AI/API costs may apply.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto items-stretch">
+
+        <article class="bg-white p-6 md:p-8 rounded-3xl border border-slate-200 shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col reveal">
+          <div>
+            <h3 class="text-xl font-bold text-navy mb-1">Starter</h3>
+            <p class="text-slate-500 text-sm mb-6">For solo operators and small local businesses.</p>
+            <div class="flex items-baseline mb-1">
+              <span class="text-4xl md:text-5xl font-extrabold text-navy tracking-tight">$299</span>
+              <span class="text-slate-400 ml-1">/mo</span>
+            </div>
+            <p class="text-xs text-slate-400 mb-7">+ $500 one-time setup</p>
+          </div>
+          <ul class="text-sm text-slate-600 space-y-3 mb-8 flex-grow">
+            <li class="flex items-start gap-2.5"><span class="text-electric font-bold mt-0.5">✓</span> AI Website Chat Assistant</li>
+            <li class="flex items-start gap-2.5"><span class="text-electric font-bold mt-0.5">✓</span> Basic Lead Capture</li>
+            <li class="flex items-start gap-2.5"><span class="text-electric font-bold mt-0.5">✓</span> Automated FAQ Responses</li>
+            <li class="flex items-start gap-2.5"><span class="text-electric font-bold mt-0.5">✓</span> Email Notifications</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline w-full">Get Started</a>
+        </article>
+
+        <article class="bg-navy p-6 md:p-8 rounded-3xl featured-glow transition-all duration-300 flex flex-col relative reveal mt-3 md:mt-0 md:-mt-4 md:mb-[-1rem]" style="transition-delay:0.08s">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2">
+            <span class="bg-gradient-to-r from-blue-500 to-blue-600 text-white text-[11px] font-bold uppercase tracking-wider py-1.5 px-4 rounded-full shadow-glow-sm whitespace-nowrap">
+              Most Popular
+            </span>
+          </div>
+          <div class="pt-4">
+            <h3 class="text-xl font-bold text-white mb-1">Growth</h3>
+            <p class="text-slate-400 text-sm mb-6">For busy service businesses with high call volume.</p>
+            <div class="flex items-baseline mb-1">
+              <span class="text-4xl md:text-5xl font-extrabold text-white tracking-tight">$599</span>
+              <span class="text-slate-400 ml-1">/mo</span>
+            </div>
+            <p class="text-xs text-slate-500 mb-7">+ $900 one-time setup</p>
+          </div>
+          <ul class="text-sm text-slate-300 space-y-3 mb-8 flex-grow">
+            <li class="flex items-start gap-2.5"><span class="text-blue-400 font-bold mt-0.5">✓</span> Everything in Starter</li>
+            <li class="flex items-start gap-2.5"><span class="text-blue-400 font-bold mt-0.5">✓</span> 24/7 AI Voice Receptionist</li>
+            <li class="flex items-start gap-2.5"><span class="text-blue-400 font-bold mt-0.5">✓</span> SMS Follow-Up Automation</li>
+            <li class="flex items-start gap-2.5"><span class="text-blue-400 font-bold mt-0.5">✓</span> Appointment Booking Integration</li>
+            <li class="flex items-start gap-2.5"><span class="text-blue-400 font-bold mt-0.5">✓</span> Lead Qualification Workflows</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary w-full">Get Started</a>
+        </article>
+
+        <article class="bg-white p-6 md:p-8 rounded-3xl border border-slate-200 shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col reveal" style="transition-delay:0.16s">
+          <div>
+            <h3 class="text-xl font-bold text-navy mb-1">Pro</h3>
+            <p class="text-slate-500 text-sm mb-6">Advanced automation and custom workflow integrations.</p>
+            <div class="flex items-baseline mb-1">
+              <span class="text-4xl md:text-5xl font-extrabold text-navy tracking-tight">$999</span>
+              <span class="text-slate-400 ml-1">/mo</span>
+            </div>
+            <p class="text-xs text-slate-400 mb-7">+ $1,500 one-time setup</p>
+          </div>
+          <ul class="text-sm text-slate-600 space-y-3 mb-8 flex-grow">
+            <li class="flex items-start gap-2.5"><span class="text-electric font-bold mt-0.5">✓</span> Everything in Growth</li>
+            <li class="flex items-start gap-2.5"><span class="text-electric font-bold mt-0.5">✓</span> CRM Integrations</li>
+            <li class="flex items-start gap-2.5"><span class="text-electric font-bold mt-0.5">✓</span> Advanced AI Workflows</li>
+            <li class="flex items-start gap-2.5"><span class="text-electric font-bold mt-0.5">✓</span> Multi-Channel Automations</li>
+            <li class="flex items-start gap-2.5"><span class="text-electric font-bold mt-0.5">✓</span> Priority Support</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline w-full">Get Started</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FINAL CTA -->
+  <section id="contact" class="relative bg-navy text-white overflow-hidden py-12 md:py-16">
+
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-navy to-navy pointer-events-none"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] rounded-full bg-blue-600/20 blur-[100px] pointer-events-none"></div>
+
+    <div class="relative max-w-container mx-auto px-4 sm:px-6 lg:px-8 z-10">
+      <div class="max-w-2xl mx-auto text-center reveal">
+
+        <h2 class="text-[1.625rem] sm:text-3xl md:text-[2.25rem] lg:text-[42px] font-bold leading-[1.4] mb-5">
+          Stop missing opportunities.<br>
+          <span class="gradient-text inline-block mt-2">Start capturing every lead.</span>
+        </h2>
+
+        <p class="text-slate-300 text-base md:text-lg leading-relaxed mb-10 max-w-lg mx-auto">
+          Book a live AI automation demo today — it takes less than 30 minutes to see the impact.
+        </p>
+
+        <div class="bg-white/[0.06] backdrop-blur-md border border-white/10 rounded-2xl p-6 sm:p-7 max-w-sm mx-auto">
+          <p class="text-slate-300 text-sm font-medium mb-4">Schedule your free demo call</p>
+          <a href="https://calendly.com/YOUR-LINK" class="btn btn-primary w-full !py-3.5">
+            Book Your Free Demo
+          </a>
+          <p class="text-slate-500 text-xs mt-4">No credit card required &nbsp;·&nbsp; Setup in days</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t border-slate-200 pt-10 md:pt-12 pb-8">
+    <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-8 md:gap-10 mb-8 md:mb-10">
+
+        <div class="max-w-sm">
+          <img src="logo.png" alt="Direct AI Automation" class="h-10 md:h-12 w-auto object-contain mb-4" loading="lazy">
+          <p class="text-slate-500 text-sm leading-relaxed mb-3">
+            AI receptionists and smart automations for local businesses. Never miss a lead.
+          </p>
+          <a href="mailto:contact@directaiautomation.com" class="text-slate-600 hover:text-electric text-sm font-medium transition break-all">
+            contact@directaiautomation.com
+          </a>
+        </div>
+
+        <nav class="grid grid-cols-2 gap-x-8 sm:gap-x-12 gap-y-2.5 text-sm" aria-label="Footer">
+          <a href="#how-it-works" class="text-slate-500 hover:text-electric transition">How It Works</a>
+          <a href="#pricing" class="text-slate-500 hover:text-electric transition">Pricing</a>
+          <a href="#services" class="text-slate-500 hover:text-electric transition">Services</a>
+          <a href="#contact" class="text-slate-500 hover:text-electric transition">Book a Demo</a>
+          <a href="#industries" class="text-slate-500 hover:text-electric transition">Who We Help</a>
+        </nav>
+
+      </div>
+
+      <div class="pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-400 text-center sm:text-left">
+        <p>© 2026 Direct AI Automation. All rights reserved.</p>
+        <p>Built for NYC small businesses.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    function openMenu() {
+      menuBtn.classList.add('open');
+      mobileMenu.classList.add('open');
+      menuBtn.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeMenu() {
+      menuBtn.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    menuBtn.addEventListener('click', () => {
+      const isOpen = menuBtn.classList.contains('open');
+      isOpen ? closeMenu() : openMenu();
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && menuBtn.classList.contains('open')) closeMenu();
+    });
+
+    // Close menu on resize to desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) closeMenu();
+    });
+
+    // Reveal on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Reveal hero items immediately
+    document.querySelectorAll('.hero-bg .reveal').forEach((el, i) => {
+      setTimeout(() => el.classList.add('visible'), 60 + i * 80);
+    });
+  </script>
 
 </body>
-
 </html>

@@ -372,46 +372,6 @@
     .consent-close-btn:hover { background: #E2E8F0; color: #0F172A; }
     .consent-section.answered { border-color: #86EFAC; background: #F0FDF4; }
     .consent-section.answered .consent-section-label { color: #166534; }
-    .consent-description {
-      font-size: 0.8rem; color: #475569; line-height: 1.55;
-      margin-bottom: 0.875rem; font-family: 'DM Sans', sans-serif;
-    }
-    .radio-group { display: flex; gap: 0.625rem; }
-    .radio-pill { flex: 1; position: relative; }
-    .radio-pill input[type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; }
-    .radio-pill label {
-      display: flex; align-items: center; justify-content: center;
-      gap: 0.4rem; padding: 0.6rem 0.75rem; border-radius: 8px;
-      border: 1.5px solid #CBD5E1; background: #fff;
-      font-size: 0.875rem; font-weight: 600; color: #64748B;
-      cursor: pointer; transition: all 0.15s;
-      font-family: 'DM Sans', sans-serif; user-select: none; width: 100%;
-    }
-    .radio-pill label:hover { border-color: #93C5FD; color: #1E40AF; background: #EFF4FF; }
-    .radio-pill input[type="radio"].yes-radio:checked + label {
-      background: #2563EB; border-color: #2563EB; color: #fff;
-      box-shadow: 0 4px 12px -3px rgba(37,99,235,0.4);
-    }
-    .radio-pill input[type="radio"].no-radio:checked + label {
-      background: #F1F5F9; border-color: #94A3B8; color: #374151;
-    }
-    .consent-section.error { border-color: #FCA5A5 !important; background: #FFF5F5 !important; }
-    .consent-section.error .consent-section-label { color: #DC2626 !important; }
-    .error-hint {
-      display: none; font-size: 0.75rem; color: #DC2626;
-      margin-top: 0.5rem; font-family: 'DM Sans', sans-serif; font-weight: 500;
-    }
-    .consent-section.error .error-hint { display: block; }
-    #consent-proceed-btn:disabled {
-      opacity: 0.55; cursor: not-allowed;
-      transform: none !important; box-shadow: none !important;
-    }
-    .consent-progress { display: flex; gap: 0.375rem; margin-bottom: 1.25rem; }
-    .consent-progress-dot {
-      height: 4px; flex: 1; border-radius: 999px;
-      background: #E2E8F0; transition: background 0.2s;
-    }
-    .consent-progress-dot.done { background: #22C55E; }
   </style>
 </head>
 
@@ -419,87 +379,61 @@
 
   <!-- =============================================
        SMS CONSENT MODAL (A2P 10DLC COMPLIANT)
-       Yes/No required selection before booking.
+       Optional checkboxes — unchecked by default.
+       Continue is ALWAYS enabled. Consent is not
+       a condition of booking.
        ============================================= -->
   <div id="sms-consent-modal" role="dialog" aria-modal="true" aria-labelledby="consent-modal-title">
     <div class="consent-modal-box">
 
       <button class="consent-close-btn" id="consent-close-btn" aria-label="Close">&#x2715;</button>
 
-      <!-- Progress dots -->
-      <div class="consent-progress" aria-hidden="true">
-        <div class="consent-progress-dot" id="dot-appt"></div>
-        <div class="consent-progress-dot" id="dot-mktg"></div>
-      </div>
-
       <div class="mb-5">
         <div class="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700 mb-3">
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="6" cy="6" r="6" fill="#2563EB"/><path d="M4 6l1.5 1.5L8 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          SMS Communication Preferences
+          Optional · SMS Preferences
         </div>
         <h2 id="consent-modal-title" class="text-xl font-bold text-navy mb-1.5" style="font-family:'Sora',sans-serif;letter-spacing:-0.02em;">
-          Your SMS Preferences
+          Before you book — a quick heads-up
         </h2>
         <p class="text-slate-500 text-sm leading-relaxed">
-          Please select <strong>Yes</strong> or <strong>No</strong> for each option below. Selecting <strong>No</strong> is perfectly fine — you can still book your demo. Your choices are required to proceed so we have a clear record of your preferences.
+          Would you like us to text you? Both options are <strong>optional</strong> and unchecked by default. Leave them as-is and you can still book your demo — no problem.
         </p>
       </div>
 
       <!-- SECTION 1: Appointment SMS -->
-      <div class="consent-section" id="consent-section-appt">
+      <div class="consent-section">
         <div class="consent-section-label">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="1" y="2" width="12" height="11" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M4 1v2M10 1v2M1 5h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           Appointment Messages
+          <span class="optional-badge">Optional</span>
         </div>
-        <p class="consent-description">
-          Receive SMS confirmations, reminders, and scheduling updates from <strong>Direct AI Automation</strong> related to your demo request. Message frequency varies. Msg &amp; data rates may apply. Reply <strong>STOP</strong> to opt out. Reply <strong>HELP</strong> for help. Consent is not a condition of purchase.
-        </p>
-        <div class="radio-group" role="radiogroup" aria-labelledby="appt-label">
-          <div class="radio-pill">
-            <input type="radio" class="yes-radio" id="appt-yes" name="consent_appointment" value="yes">
-            <label for="appt-yes">
-              <span>✓</span> Yes, I agree
-            </label>
-          </div>
-          <div class="radio-pill">
-            <input type="radio" class="no-radio" id="appt-no" name="consent_appointment" value="no">
-            <label for="appt-no">
-              <span>✕</span> No thanks
-            </label>
-          </div>
-        </div>
-        <p class="error-hint" id="appt-error" role="alert">Please select Yes or No to continue.</p>
+        <label class="consent-checkbox-label" for="consent-appt-checkbox">
+          <input type="checkbox" id="consent-appt-checkbox" name="consent_appointment">
+          <span>
+            It's OK to text me appointment confirmations, reminders, and scheduling updates from <strong>Direct AI Automation</strong> about my demo request. Message frequency varies. Msg &amp; data rates may apply. Reply <strong>STOP</strong> to opt out. Reply <strong>HELP</strong> for help. Consent is not a condition of purchase.
+          </span>
+        </label>
       </div>
 
       <!-- SECTION 2: Marketing SMS -->
-      <div class="consent-section" id="consent-section-mktg">
+      <div class="consent-section">
         <div class="consent-section-label">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M2 4.5h10M2 7h7M2 9.5h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           Marketing &amp; Promotions
+          <span class="optional-badge">Optional</span>
         </div>
-        <p class="consent-description">
-          Receive marketing and promotional SMS from <strong>Direct AI Automation</strong>, including offers, service updates, and AI automation news. Message frequency varies. Msg &amp; data rates may apply. Reply <strong>STOP</strong> to opt out. Reply <strong>HELP</strong> for help. Consent is not a condition of purchase.
-        </p>
-        <div class="radio-group" role="radiogroup" aria-labelledby="mktg-label">
-          <div class="radio-pill">
-            <input type="radio" class="yes-radio" id="mktg-yes" name="consent_marketing" value="yes">
-            <label for="mktg-yes">
-              <span>✓</span> Yes, I agree
-            </label>
-          </div>
-          <div class="radio-pill">
-            <input type="radio" class="no-radio" id="mktg-no" name="consent_marketing" value="no">
-            <label for="mktg-no">
-              <span>✕</span> No thanks
-            </label>
-          </div>
-        </div>
-        <p class="error-hint" id="mktg-error" role="alert">Please select Yes or No to continue.</p>
+        <label class="consent-checkbox-label" for="consent-mktg-checkbox">
+          <input type="checkbox" id="consent-mktg-checkbox" name="consent_marketing">
+          <span>
+            It's OK to text me occasional tips, offers, and AI automation news from <strong>Direct AI Automation</strong>. Message frequency varies. Msg &amp; data rates may apply. Reply <strong>STOP</strong> to opt out. Reply <strong>HELP</strong> for help. Consent is not a condition of purchase.
+          </span>
+        </label>
       </div>
 
       <!-- General Disclosure -->
       <div class="consent-general-disclosure" role="note" aria-label="SMS consent general disclosure">
-        By selecting your preferences and proceeding, you acknowledge your SMS communication choices with <strong>Direct AI Automation</strong>. <strong>Consent is not required to purchase services or schedule a demo.</strong> Reply <strong>STOP</strong> to unsubscribe at any time. Reply <strong>HELP</strong> for assistance. Msg &amp; data rates may apply. No mobile information or SMS opt-in consent will be shared with third parties or affiliates for marketing or promotional purposes.
+        <strong>SMS consent is not required to book a demo or purchase services.</strong> You can leave both boxes unchecked and continue. If you do opt in, reply <strong>STOP</strong> at any time to unsubscribe or <strong>HELP</strong> for assistance. Msg &amp; data rates may apply. No mobile information or SMS opt-in consent will be shared with third parties or affiliates for marketing or promotional purposes.
       </div>
 
       <!-- Legal Links -->
@@ -510,21 +444,17 @@
         <a href="terms-of-service.html" target="_blank" rel="noopener noreferrer" class="text-electric hover:underline font-medium">Terms of Service</a>.
       </p>
 
-      <!-- CTA -->
+      <!-- CTA — Always enabled. -->
       <button
         id="consent-proceed-btn"
         class="btn btn-primary w-full"
         onclick="proceedToBooking()"
         aria-label="Continue to booking form"
-        disabled
       >
         Continue to Booking &rarr;
       </button>
       <p class="text-center text-xs text-slate-400 mt-3 leading-relaxed">
         Direct AI Automation is a service brand operated by Direct AI Automation Systems LLC.
-      </p>
-      <p class="text-center text-xs text-slate-400 mt-2">
-        Both selections required to continue. Selecting No is fine.
       </p>
 
     </div>
@@ -1053,50 +983,20 @@
     // =============================================
     // SMS CONSENT MODAL — Yes/No Required
     // =============================================
-    const BOOKING_URL = 'https://api.leadconnectorhq.com/widget/booking/4PMJoT61mkOp3LfT5092';
-
-    function getRadioValue(name) {
-      const el = document.querySelector(`input[name="${name}"]:checked`);
-      return el ? el.value : null;
-    }
-
-    function updateProgress() {
-      const apptVal = getRadioValue('consent_appointment');
-      const mktgVal = getRadioValue('consent_marketing');
-      const dotAppt = document.getElementById('dot-appt');
-      const dotMktg = document.getElementById('dot-mktg');
-      const btn = document.getElementById('consent-proceed-btn');
-
-      dotAppt.className = 'consent-progress-dot ' + (apptVal ? 'done' : '');
-      dotMktg.className = 'consent-progress-dot ' + (mktgVal ? 'done' : '');
-
-      // Mark sections as answered
-      const apptSection = document.getElementById('consent-section-appt');
-      const mktgSection = document.getElementById('consent-section-mktg');
-      if (apptVal) { apptSection.classList.add('answered'); apptSection.classList.remove('error'); }
-      if (mktgVal) { mktgSection.classList.add('answered'); mktgSection.classList.remove('error'); }
-
-      // Enable proceed only when both answered
-      btn.disabled = !(apptVal && mktgVal);
-    }
+    const BOOKING_URL = 'https://calendar.directaiautomation.com/widget/booking/4PMJoT61mkOp3LfT5092';
 
     function openConsentModal() {
       const modal = document.getElementById('sms-consent-modal');
       modal.classList.add('active');
       document.body.style.overflow = 'hidden';
 
-      // Restore previous selections from sessionStorage
+      // Restore previous selections from sessionStorage (if user reopens modal)
       const savedAppt = sessionStorage.getItem('consent_appointment');
       const savedMktg = sessionStorage.getItem('consent_marketing');
-      if (savedAppt) {
-        const el = document.querySelector(`input[name="consent_appointment"][value="${savedAppt}"]`);
-        if (el) el.checked = true;
-      }
-      if (savedMktg) {
-        const el = document.querySelector(`input[name="consent_marketing"][value="${savedMktg}"]`);
-        if (el) el.checked = true;
-      }
-      updateProgress();
+      const apptBox = document.getElementById('consent-appt-checkbox');
+      const mktgBox = document.getElementById('consent-mktg-checkbox');
+      if (apptBox) apptBox.checked = (savedAppt === 'yes');
+      if (mktgBox) mktgBox.checked = (savedMktg === 'yes');
 
       setTimeout(() => document.getElementById('consent-close-btn').focus(), 50);
     }
@@ -1107,43 +1007,28 @@
     }
 
     function proceedToBooking() {
-      const apptVal = getRadioValue('consent_appointment');
-      const mktgVal = getRadioValue('consent_marketing');
-      let valid = true;
+      const apptBox = document.getElementById('consent-appt-checkbox');
+      const mktgBox = document.getElementById('consent-mktg-checkbox');
+      const apptVal = (apptBox && apptBox.checked) ? 'yes' : 'no';
+      const mktgVal = (mktgBox && mktgBox.checked) ? 'yes' : 'no';
 
-      // Validate both sections answered
-      const apptSection = document.getElementById('consent-section-appt');
-      const mktgSection = document.getElementById('consent-section-mktg');
-
-      if (!apptVal) {
-        apptSection.classList.add('error');
-        apptSection.classList.remove('answered');
-        valid = false;
-      }
-      if (!mktgVal) {
-        mktgSection.classList.add('error');
-        mktgSection.classList.remove('answered');
-        valid = false;
-      }
-      if (!valid) return;
-
-      // Save to sessionStorage
+      // Save to sessionStorage for record-keeping / re-opens
       sessionStorage.setItem('consent_appointment', apptVal);
       sessionStorage.setItem('consent_marketing', mktgVal);
+      sessionStorage.setItem('consent_timestamp', new Date().toISOString());
 
-      // Build URL with consent params for GoHighLevel pass-through
+      // Pass consent state to GoHighLevel booking widget via URL params.
+      // Param names must match the Query Key of the custom fields in GHL:
+      //   GHL field "SMS Appointment Consent" → query key: sms_appointment_consent
+      //   GHL field "SMS Marketing Consent"   → query key: sms_marketing_consent
       const params = new URLSearchParams({
-        consent_appointment: apptVal,
-        consent_marketing: mktgVal,
+        sms_appointment_consent: apptVal,
+        sms_marketing_consent: mktgVal,
       });
 
       closeConsentModal();
       window.open(`${BOOKING_URL}?${params.toString()}`, '_blank', 'noopener,noreferrer');
     }
-
-    // Wire up radio change listeners
-    document.querySelectorAll('input[name="consent_appointment"], input[name="consent_marketing"]')
-      .forEach(el => el.addEventListener('change', updateProgress));
 
     // Close on backdrop click
     document.getElementById('sms-consent-modal').addEventListener('click', function(e) {
@@ -1158,6 +1043,17 @@
         if (modal.classList.contains('active')) closeConsentModal();
       }
     });
+  </script>
+  <!-- =============================================
+       GoHighLevel A2P Compliance Chat Widget
+       Required for A2P 10DLC registration approval.
+       Loads in the bottom-right corner of the page.
+       ============================================= -->
+  <script
+    src="https://widgets.leadconnectorhq.com/loader.js"
+    data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+    data-widget-id="6a089b540d644463b087c6d4"
+    data-source="WEB_USER">
   </script>
 
 </body>

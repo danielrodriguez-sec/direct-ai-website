@@ -259,6 +259,15 @@
     #sms-consent-modal.active {
       display: flex;
     }
+    /* Hide the GHL chat widget while the SMS consent modal is open
+       so it doesn't overlap or distract from the consent flow. */
+    body.modal-open chat-widget,
+    body.modal-open #chat-widget,
+    body.modal-open .lc-chat-widget,
+    body.modal-open [id^="chat-widget"] {
+      display: none !important;
+      visibility: hidden !important;
+    }
     .consent-modal-box {
       background: #fff;
       border-radius: 20px;
@@ -988,6 +997,7 @@
     function openConsentModal() {
       const modal = document.getElementById('sms-consent-modal');
       modal.classList.add('active');
+      document.body.classList.add('modal-open');
       document.body.style.overflow = 'hidden';
 
       // Restore previous selections from sessionStorage (if user reopens modal)
@@ -1003,6 +1013,7 @@
 
     function closeConsentModal() {
       document.getElementById('sms-consent-modal').classList.remove('active');
+      document.body.classList.remove('modal-open');
       document.body.style.overflow = '';
     }
 

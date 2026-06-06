@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0B1120">
+  <title>About | Direct AI Automation</title>
+  <meta name="description" content="Meet Daniel Rodriguez — 20+ years DFIR, federal and Fortune 500 cybersecurity veteran, and founder of Direct AI Automation. AI-powered growth for NYC small businesses, built with security-first principles.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { display: ['Sora', 'sans-serif'], sans: ['DM Sans', 'sans-serif'] },
+          colors: {
+            navy: '#0B1120', 'navy-2': '#111B30', electric: '#2563EB',
+            'electric-hover': '#1D4ED8', 'electric-soft': '#EFF4FF'
+          },
+          boxShadow: {
+            'glow': '0 10px 30px -8px rgba(37,99,235,0.45)',
+            'card': '0 1px 2px rgba(15,23,42,0.04), 0 8px 24px -8px rgba(15,23,42,0.08)',
+            'card-hover': '0 4px 8px rgba(15,23,42,0.06), 0 20px 40px -10px rgba(15,23,42,0.12)'
+          },
+          maxWidth: { 'container': '1200px' }
+        }
+      }
+    }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: 'DM Sans', sans-serif; -webkit-font-smoothing: antialiased; letter-spacing: -0.005em; }
+    h1,h2,h3,h4,h5,h6 { font-family: 'Sora', sans-serif; letter-spacing: -0.02em; }
+    .gradient-text { background: linear-gradient(135deg, #60A5FA 0%, #3B82F6 50%, #2563EB 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-bg {
+      background-color: #0B1120;
+      background-image:
+        radial-gradient(ellipse 70% 50% at 75% 5%, rgba(37,99,235,0.25) 0%, transparent 65%),
+        radial-gradient(ellipse 55% 45% at 5% 90%, rgba(59,130,246,0.12) 0%, transparent 60%);
+    }
+    .grid-pattern {
+      background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 32px 32px;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 80%);
+    }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.875rem 1.75rem; min-height: 48px; border-radius: 9999px; font-weight: 600; font-size: 0.9375rem; transition: all 0.2s; white-space: nowrap; }
+    .btn-primary { background: #2563EB; color: white; box-shadow: 0 8px 24px -6px rgba(37,99,235,0.5); }
+    .btn-primary:hover { background: #1D4ED8; transform: translateY(-1px); }
+    .nav-link { font-size: 0.9375rem; font-weight: 600; color: #2563EB; transition: color 0.2s; }
+    .nav-link:hover { color: #1D4ED8; }
+    .credential-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(37,99,235,0.08); border: 1px solid rgba(37,99,235,0.2);
+      border-radius: 999px; padding: 0.4rem 1rem;
+      font-size: 0.8125rem; font-weight: 600; color: #1E40AF;
+    }
+    .timeline-item { position: relative; padding-left: 2rem; }
+    .timeline-item::before {
+      content: '';
+      position: absolute; left: 0; top: 6px;
+      width: 10px; height: 10px;
+      border-radius: 50%; background: #2563EB;
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.2);
+    }
+    .timeline-item::after {
+      content: '';
+      position: absolute; left: 4px; top: 16px;
+      width: 2px; height: calc(100% + 1rem);
+      background: rgba(37,99,235,0.15);
+    }
+    .timeline-item:last-child::after { display: none; }
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+  </style>
+</head>
+<body class="text-slate-800 bg-white antialiased overflow-x-hidden">
+
+  <!-- HEADER -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-white/95 backdrop-blur-lg border-b border-slate-200/70 shadow-sm">
+    <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-[64px] md:h-[80px]">
+        <a href="index.html" class="flex-shrink-0">
+          <img src="logo.png" alt="Direct AI Automation" class="h-10 md:h-16 w-auto object-contain">
+        </a>
+        <nav class="hidden md:flex items-center gap-9">
+          <a href="index.html#how-it-works" class="nav-link">How It Works</a>
+          <a href="index.html#services" class="nav-link">Services</a>
+          <a href="index.html#industries" class="nav-link">Who We Help</a>
+          <a href="index.html#pricing" class="nav-link">Pricing</a>
+          <a href="about.html" class="nav-link">About</a>
+        </nav>
+        <a href="https://calendar.directaiautomation.com/widget/booking/4PMJoT61mkOp3LfT5092" target="_blank" rel="noopener noreferrer" class="btn btn-primary !min-h-[44px] !py-2.5 !px-6 !text-sm">Book Your Free Demo</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-bg text-white pt-[100px] pb-14 md:pt-[130px] md:pb-20 relative overflow-hidden">
+    <div class="absolute inset-0 grid-pattern pointer-events-none"></div>
+    <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-500/10 px-3 py-1.5 text-xs font-medium text-blue-200 mb-6">
+          <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+          Built in NYC · Serving NYC
+        </div>
+        <h1 class="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
+          AI Automation Built on
+          <span class="gradient-text block">20 Years of Security</span>
+        </h1>
+        <p class="text-slate-300 text-lg leading-relaxed max-w-2xl">
+          Most AI automation vendors are marketers with software. Direct AI Automation was built by a federal cybersecurity veteran who spent two decades protecting the most sensitive systems in the country — and now brings that same security-first discipline to NYC small businesses.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDER SECTION -->
+  <section class="bg-white py-16 md:py-24">
+    <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-[1fr_1.6fr] gap-12 lg:gap-16 items-start max-w-5xl mx-auto">
+
+        <!-- Left: Photo + credentials -->
+        <div class="reveal">
+          <div class="bg-slate-100 rounded-3xl overflow-hidden mb-6 aspect-square max-w-sm mx-auto lg:mx-0">
+            <img src="logo.png" alt="Daniel Rodriguez — Founder, Direct AI Automation" class="w-full h-full object-contain p-8">
+          </div>
+          <div class="text-center lg:text-left">
+            <h2 class="text-2xl font-bold text-navy mb-1">Daniel Rodriguez</h2>
+            <p class="text-electric font-semibold mb-4">Founder, Direct AI Automation</p>
+            <div class="flex flex-wrap gap-2 justify-center lg:justify-start">
+              <span class="credential-badge">🛡️ CISSP</span>
+              <span class="credential-badge">🔍 20+ Yrs DFIR</span>
+              <span class="credential-badge">🏛️ Federal IR</span>
+              <span class="credential-badge">📍 Brooklyn, NY</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Story -->
+        <div class="reveal">
+          <div class="inline-flex items-center gap-2 rounded-full bg-electric-soft border border-blue-200 px-3.5 py-1.5 text-xs font-semibold text-electric uppercase tracking-wider mb-6">
+            The Story Behind Direct AI Automation
+          </div>
+
+          <p class="text-slate-600 leading-relaxed mb-5">
+            For over two decades, Daniel Rodriguez worked at the intersection of cybersecurity and crisis response — protecting federal agencies and Fortune 500 enterprises from some of the most sophisticated threats in the world. His work spanned CISA's Hunt and Incident Response Team, the Pentagon Computer Incident Response Team, the DoD Cyber Crime Center, the U.S. Department of State CIRT, and the NCUA — alongside corporate roles at Synchrony Financial, Biogen, and E*Trade Financial.
+          </p>
+
+          <p class="text-slate-600 leading-relaxed mb-5">
+            In that work, he authored incident response SOPs, playbooks, and detection content deployed across agency-level and enterprise SOCs. He understands what it means to build systems that handle sensitive data responsibly — and what happens when they don't.
+          </p>
+
+          <p class="text-slate-600 leading-relaxed mb-5">
+            Throughout those years, one thing separated the agencies and enterprises that recovered quickly from incidents and those that didn't: documented, repeatable processes. Daniel authored the standard operating procedures, response playbooks, and detection workflows that teams relied on when seconds counted. That same discipline — building systems that are precise, reliable, and leave nothing to chance — is the foundation of every automation delivered at Direct AI Automation. When we set up your lead capture, follow-up sequences, and booking system, it's not improvised. It's engineered to eliminate wasted time, reduce operational costs, and create the kind of consistent, repeatable business processes that free you to focus on growth — not admin.
+          </p>
+
+          <p class="text-slate-600 leading-relaxed mb-5">
+            After a deliberate sabbatical focused on AI, large language models, and emerging technology, Daniel returned with a clear mission: bring the same security-first, systematic discipline from federal incident response to the AI automation space — and make it accessible to the small businesses that need it most.
+          </p>
+
+          <p class="text-slate-600 leading-relaxed mb-8">
+            Direct AI Automation was built for NYC small businesses — the dental offices, law firms, salons, and home service companies that are losing customers every day to missed calls and slow follow-ups, but don't have the enterprise resources to fix it. That gap is exactly what we close.
+          </p>
+
+          <a href="https://calendar.directaiautomation.com/widget/booking/4PMJoT61mkOp3LfT5092" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book Your Free Demo</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDENTIALS TIMELINE -->
+  <section class="bg-slate-50 py-16 md:py-20">
+    <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12 reveal">
+          <h2 class="text-2xl sm:text-3xl font-bold text-navy mb-3">Career Background</h2>
+          <p class="text-slate-500 max-w-xl mx-auto">Two decades of incident response and digital forensics across the highest-stakes environments in the country.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-10">
+
+          <!-- Federal -->
+          <div class="reveal">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center text-lg">🏛️</div>
+              <h3 class="font-bold text-navy text-lg">Federal & Government</h3>
+            </div>
+            <div class="space-y-5">
+              <div class="timeline-item">
+                <p class="font-semibold text-navy text-sm">CISA — Hunt & Incident Response Team</p>
+                <p class="text-slate-500 text-sm mt-0.5">Cybersecurity & Infrastructure Security Agency</p>
+              </div>
+              <div class="timeline-item">
+                <p class="font-semibold text-navy text-sm">Pentagon Computer Incident Response Team</p>
+                <p class="text-slate-500 text-sm mt-0.5">Department of Defense</p>
+              </div>
+              <div class="timeline-item">
+                <p class="font-semibold text-navy text-sm">DoD Cyber Crime Center</p>
+                <p class="text-slate-500 text-sm mt-0.5">Department of Defense</p>
+              </div>
+              <div class="timeline-item">
+                <p class="font-semibold text-navy text-sm">U.S. Department of State CIRT</p>
+                <p class="text-slate-500 text-sm mt-0.5">Computer Incident Response Team</p>
+              </div>
+              <div class="timeline-item">
+                <p class="font-semibold text-navy text-sm">NCUA Incident Response</p>
+                <p class="text-slate-500 text-sm mt-0.5">National Credit Union Administration</p>
+              </div>
+              <div class="timeline-item">
+                <p class="font-semibold text-navy text-sm">2020 Census Bureau SOC</p>
+                <p class="text-slate-500 text-sm mt-0.5">Security Operations Center</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Enterprise -->
+          <div class="reveal">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 rounded-xl bg-electric text-white flex items-center justify-center text-lg">🏢</div>
+              <h3 class="font-bold text-navy text-lg">Fortune 500 Enterprise</h3>
+            </div>
+            <div class="space-y-5">
+              <div class="timeline-item">
+                <p class="font-semibold text-navy text-sm">Synchrony Financial — CIRT</p>
+                <p class="text-slate-500 text-sm mt-0.5">Computer Incident Response Team</p>
+              </div>
+              <div class="timeline-item">
+                <p class="font-semibold text-navy text-sm">Biogen — Incident Response Team</p>
+                <p class="text-slate-500 text-sm mt-0.5">Global biopharmaceutical enterprise</p>
+              </div>
+              <div class="timeline-item">
+                <p class="font-semibold text-navy text-sm">E*Trade Financial — CIRT</p>
+                <p class="text-slate-500 text-sm mt-0.5">Computer Incident Response Team</p>
+              </div>
+              <div class="timeline-item mt-8">
+                <p class="font-semibold text-navy text-sm">Author — IR SOPs, Playbooks & Detection Content</p>
+                <p class="text-slate-500 text-sm mt-0.5">Deployed across agency-level and enterprise SOCs</p>
+              </div>
+            </div>
+
+            <!-- AI Security Work -->
+            <div class="mt-10">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 rounded-xl bg-teal-600 text-white flex items-center justify-center text-lg">🤖</div>
+                <h3 class="font-bold text-navy text-lg">AI Security Research</h3>
+              </div>
+              <div class="space-y-4">
+                <div class="timeline-item">
+                  <p class="font-semibold text-navy text-sm">AI/LLM Security Portfolio</p>
+                  <p class="text-slate-500 text-sm mt-0.5">Prompt injection, LLM red-teaming, IR playbooks for AI incidents</p>
+                </div>
+                <div class="timeline-item">
+                  <p class="font-semibold text-navy text-sm">Splunk Detection Content for LLM Abuse</p>
+                  <p class="text-slate-500 text-sm mt-0.5">Detection engineering applied to AI system threats</p>
+                </div>
+                <div class="timeline-item">
+                  <p class="font-semibold text-navy text-sm">OWASP, MITRE ATLAS, NIST AI RMF</p>
+                  <p class="text-slate-500 text-sm mt-0.5">Active frameworks cross-reference and applied research</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY IT MATTERS FOR SMALL BUSINESS -->
+  <section class="bg-white py-16 md:py-20">
+    <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12 reveal">
+          <h2 class="text-2xl sm:text-3xl font-bold text-navy mb-3">Why Your Security Background Matters to <span class="gradient-text">Your Business</span></h2>
+          <p class="text-slate-500 max-w-2xl mx-auto">When you work with Direct AI Automation, you're not just getting software. You're getting someone who has spent 20 years thinking about what happens when systems fail — and building them so they don't.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 reveal">
+            <div class="w-11 h-11 rounded-xl bg-electric-soft text-electric flex items-center justify-center text-xl mb-4">🔐</div>
+            <h3 class="font-bold text-navy mb-2">Your Customer Data Is Safe</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">Every system we build handles your customer names, phone numbers, and communications with the same security discipline applied at federal agencies. Your data stays yours — always.</p>
+          </div>
+          <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 reveal" style="transition-delay:0.08s">
+            <div class="w-11 h-11 rounded-xl bg-electric-soft text-electric flex items-center justify-center text-xl mb-4">📋</div>
+            <h3 class="font-bold text-navy mb-2">Compliance Built In</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">SMS compliance (A2P 10DLC, TCPA), HIPAA awareness for medical clients, and data handling best practices aren't afterthoughts — they're built into every system from day one.</p>
+          </div>
+          <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 reveal" style="transition-delay:0.16s">
+            <div class="w-11 h-11 rounded-xl bg-electric-soft text-electric flex items-center justify-center text-xl mb-4">🧠</div>
+            <h3 class="font-bold text-navy mb-2">Systematic. Not Guesswork.</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">Federal incident response demands precise, documented, repeatable processes. That same discipline is how we build, test, and deliver your automation — so it works the first time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION STATEMENT -->
+  <section class="bg-navy text-white py-16 md:py-20">
+    <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center reveal">
+        <div class="text-5xl mb-6">🗽</div>
+        <h2 class="text-2xl sm:text-3xl font-bold mb-6">Built for NYC. Built to Last.</h2>
+        <p class="text-slate-300 text-lg leading-relaxed mb-6">
+          New York City small businesses are the backbone of this city. They work harder than anyone, compete against larger operations with bigger budgets, and often lose customers not because of bad service — but because nobody answered the phone.
+        </p>
+        <p class="text-slate-300 text-lg leading-relaxed mb-10">
+          Direct AI Automation exists to close that gap. To give the Brooklyn dentist, the Queens salon owner, the Bronx plumber — the same 24/7 lead capture and follow-up systems that enterprise companies use. At a price that makes sense for a small business.
+        </p>
+        <a href="https://calendar.directaiautomation.com/widget/booking/4PMJoT61mkOp3LfT5092" target="_blank" rel="noopener noreferrer" class="btn btn-primary text-lg px-10 py-4">Book Your Free Demo</a>
+        <p class="text-slate-500 text-xs mt-4">No credit card required · Setup in days · Cancel anytime</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t border-slate-200 py-8">
+    <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-slate-400 text-sm">© 2026 Direct AI Automation Systems LLC. All rights reserved.</p>
+      <p class="text-slate-400 text-xs mt-1">directaiautomation.com · (347) 970-7475 · contact@directaiautomation.com</p>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

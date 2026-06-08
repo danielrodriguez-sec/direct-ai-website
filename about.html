@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0B1120">
   <title>About | Direct AI Automation</title>
-  <meta name="description" content="Meet Daniel Rodriguez — 20+ years DFIR, federal and Fortune 500 cybersecurity veteran, and founder of Direct AI Automation. AI-powered growth for NYC small businesses, built with security-first principles.">
+  <meta name="description" content="Direct AI Automation gives NYC small businesses AI-powered solutions to capture more leads, convert more customers, and grow revenue — 24/7, automatically.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -15,15 +15,8 @@
       theme: {
         extend: {
           fontFamily: { display: ['Sora', 'sans-serif'], sans: ['DM Sans', 'sans-serif'] },
-          colors: {
-            navy: '#0B1120', 'navy-2': '#111B30', electric: '#2563EB',
-            'electric-hover': '#1D4ED8', 'electric-soft': '#EFF4FF'
-          },
-          boxShadow: {
-            'glow': '0 10px 30px -8px rgba(37,99,235,0.45)',
-            'card': '0 1px 2px rgba(15,23,42,0.04), 0 8px 24px -8px rgba(15,23,42,0.08)',
-            'card-hover': '0 4px 8px rgba(15,23,42,0.06), 0 20px 40px -10px rgba(15,23,42,0.12)'
-          },
+          colors: { navy: '#0B1120', 'navy-2': '#111B30', electric: '#2563EB', 'electric-hover': '#1D4ED8', 'electric-soft': '#EFF4FF' },
+          boxShadow: { 'glow': '0 10px 30px -8px rgba(37,99,235,0.45)', 'card': '0 1px 2px rgba(15,23,42,0.04), 0 8px 24px -8px rgba(15,23,42,0.08)', 'card-hover': '0 4px 8px rgba(15,23,42,0.06), 0 20px 40px -10px rgba(15,23,42,0.12)' },
           maxWidth: { 'container': '1200px' }
         }
       }
@@ -34,44 +27,13 @@
     body { font-family: 'DM Sans', sans-serif; -webkit-font-smoothing: antialiased; letter-spacing: -0.005em; }
     h1,h2,h3,h4,h5,h6 { font-family: 'Sora', sans-serif; letter-spacing: -0.02em; }
     .gradient-text { background: linear-gradient(135deg, #60A5FA 0%, #3B82F6 50%, #2563EB 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .hero-bg {
-      background-color: #0B1120;
-      background-image:
-        radial-gradient(ellipse 70% 50% at 75% 5%, rgba(37,99,235,0.25) 0%, transparent 65%),
-        radial-gradient(ellipse 55% 45% at 5% 90%, rgba(59,130,246,0.12) 0%, transparent 60%);
-    }
-    .grid-pattern {
-      background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
-      background-size: 32px 32px;
-      mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 80%);
-      -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 80%);
-    }
+    .hero-bg { background-color: #0B1120; background-image: radial-gradient(ellipse 70% 50% at 75% 5%, rgba(37,99,235,0.25) 0%, transparent 65%), radial-gradient(ellipse 55% 45% at 5% 90%, rgba(59,130,246,0.12) 0%, transparent 60%); }
+    .grid-pattern { background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 32px 32px; mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 80%); -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 80%); }
     .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.875rem 1.75rem; min-height: 48px; border-radius: 9999px; font-weight: 600; font-size: 0.9375rem; transition: all 0.2s; white-space: nowrap; }
     .btn-primary { background: #2563EB; color: white; box-shadow: 0 8px 24px -6px rgba(37,99,235,0.5); }
     .btn-primary:hover { background: #1D4ED8; transform: translateY(-1px); }
     .nav-link { font-size: 0.9375rem; font-weight: 600; color: #2563EB; transition: color 0.2s; }
     .nav-link:hover { color: #1D4ED8; }
-    .credential-badge {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: rgba(37,99,235,0.08); border: 1px solid rgba(37,99,235,0.2);
-      border-radius: 999px; padding: 0.4rem 1rem;
-      font-size: 0.8125rem; font-weight: 600; color: #1E40AF;
-    }
-    .timeline-item { position: relative; padding-left: 2rem; }
-    .timeline-item::before {
-      content: '';
-      position: absolute; left: 0; top: 6px;
-      width: 10px; height: 10px;
-      border-radius: 50%; background: #2563EB;
-      box-shadow: 0 0 0 3px rgba(37,99,235,0.2);
-    }
-    .timeline-item::after {
-      content: '';
-      position: absolute; left: 4px; top: 16px;
-      width: 2px; height: calc(100% + 1rem);
-      background: rgba(37,99,235,0.15);
-    }
-    .timeline-item:last-child::after { display: none; }
     .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .reveal.visible { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
@@ -108,62 +70,56 @@
           Built in NYC · Serving NYC
         </div>
         <h1 class="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
-          AI Automation Built on
-          <span class="gradient-text block">20 Years of Security</span>
+          Built to Help NYC
+          <span class="gradient-text block">Small Businesses Grow</span>
         </h1>
         <p class="text-slate-300 text-lg leading-relaxed max-w-2xl">
-          Most AI automation vendors are marketers with software. Direct AI Automation was built by a federal cybersecurity veteran who spent two decades protecting the most sensitive systems in the country — and now brings that same security-first discipline to NYC small businesses.
+          Direct AI Automation gives NYC small businesses the AI-powered solutions to capture more leads, convert more customers, and grow revenue — 24/7, automatically.
         </p>
       </div>
     </div>
   </section>
 
   <!-- FOUNDER SECTION -->
-  <section class="bg-white py-16 md:py-24">
+  <section class="bg-white py-16 md:py-20">
     <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-[1fr_1.6fr] gap-12 lg:gap-16 items-start max-w-5xl mx-auto">
+      <div class="grid lg:grid-cols-[1fr_1.8fr] gap-12 lg:gap-16 items-start max-w-5xl mx-auto">
 
-        <!-- Left: Photo + credentials -->
         <div class="reveal">
           <div class="bg-slate-100 rounded-3xl overflow-hidden mb-6 aspect-square max-w-sm mx-auto lg:mx-0">
-            <img src="logo.png" alt="Daniel Rodriguez — Founder, Direct AI Automation" class="w-full h-full object-contain p-8">
+            <img src="Headshot.png" alt="Daniel Rodriguez — Founder, Direct AI Automation" class="w-full h-full object-cover">
           </div>
           <div class="text-center lg:text-left">
-            <h2 class="text-2xl font-bold text-navy mb-1">Daniel Rodriguez</h2>
-            <p class="text-electric font-semibold mb-4">Founder, Direct AI Automation</p>
+            <h3 class="text-xl font-bold text-navy mb-1">Daniel Rodriguez</h3>
+            <p class="text-electric font-semibold text-sm mb-4">Founder, Direct AI Automation</p>
             <div class="flex flex-wrap gap-2 justify-center lg:justify-start">
-              <span class="credential-badge">🛡️ CISSP</span>
-              <span class="credential-badge">🔍 20+ Yrs DFIR</span>
-              <span class="credential-badge">🏛️ Federal IR</span>
-              <span class="credential-badge">📍 Brooklyn, NY</span>
+              <span class="inline-flex items-center gap-1.5 bg-electric-soft border border-blue-200 rounded-full px-3 py-1 text-xs font-semibold text-electric">🛡️ CISSP Certified</span>
+              <span class="inline-flex items-center gap-1.5 bg-electric-soft border border-blue-200 rounded-full px-3 py-1 text-xs font-semibold text-electric">📍 Brooklyn, NY</span>
+              <span class="inline-flex items-center gap-1.5 bg-electric-soft border border-blue-200 rounded-full px-3 py-1 text-xs font-semibold text-electric">20+ Yrs Experience</span>
             </div>
           </div>
         </div>
 
-        <!-- Right: Story -->
         <div class="reveal">
           <div class="inline-flex items-center gap-2 rounded-full bg-electric-soft border border-blue-200 px-3.5 py-1.5 text-xs font-semibold text-electric uppercase tracking-wider mb-6">
             The Story Behind Direct AI Automation
           </div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-navy mb-6">Why We Built This</h2>
 
           <p class="text-slate-600 leading-relaxed mb-5">
-            For over two decades, Daniel Rodriguez worked at the intersection of cybersecurity and crisis response — protecting federal agencies and Fortune 500 enterprises from some of the most sophisticated threats in the world. His work spanned CISA's Hunt and Incident Response Team, the Pentagon Computer Incident Response Team, the DoD Cyber Crime Center, the U.S. Department of State CIRT, and the NCUA — alongside corporate roles at Synchrony Financial, Biogen, and E*Trade Financial.
+            New York City small businesses are the backbone of this city. They work harder than anyone, deliver exceptional service, and compete against larger operations with bigger budgets every single day. And yet too many of them lose customers — not because of anything they did wrong, but because a call went unanswered or a lead never got a follow-up.
           </p>
 
           <p class="text-slate-600 leading-relaxed mb-5">
-            In that work, he authored incident response SOPs, playbooks, and detection content deployed across agency-level and enterprise SOCs. He understands what it means to build systems that handle sensitive data responsibly — and what happens when they don't.
+            Direct AI Automation was built to close that gap. To give the Brooklyn dentist, the Queens salon owner, the Bronx plumber — the same AI-powered lead capture, follow-up, and booking solutions that enterprise companies use. Solutions that work around the clock, capture every opportunity, and convert more inquiries into paying customers — automatically.
           </p>
 
           <p class="text-slate-600 leading-relaxed mb-5">
-            Throughout those years, one thing separated the agencies and enterprises that recovered quickly from incidents and those that didn't: documented, repeatable processes. Daniel authored the standard operating procedures, response playbooks, and detection workflows that teams relied on when seconds counted. That same discipline — building systems that are precise, reliable, and leave nothing to chance — is the foundation of every automation delivered at Direct AI Automation. When we set up your lead capture, follow-up sequences, and booking system, it's not improvised. It's engineered to eliminate wasted time, reduce operational costs, and create the kind of consistent, repeatable business processes that free you to focus on growth — not admin.
-          </p>
-
-          <p class="text-slate-600 leading-relaxed mb-5">
-            After a deliberate sabbatical focused on AI, large language models, and emerging technology, Daniel returned with a clear mission: bring the same security-first, systematic discipline from federal incident response to the AI automation space — and make it accessible to the small businesses that need it most.
+            Our founder brings over 20 years of experience building precise, documented, and repeatable processes at the federal and Fortune 500 enterprise level. That same discipline — engineered processes that eliminate wasted time, reduce operational costs, and create consistent results — is how every client solution is built at Direct AI Automation. Not improvised. Engineered for growth.
           </p>
 
           <p class="text-slate-600 leading-relaxed mb-8">
-            Direct AI Automation was built for NYC small businesses — the dental offices, law firms, salons, and home service companies that are losing customers every day to missed calls and slow follow-ups, but don't have the enterprise resources to fix it. That gap is exactly what we close.
+            Every solution we build is designed around one outcome: helping your business grow. More leads captured. More appointments booked. More revenue generated. All running automatically, so you can focus on doing the work you're great at.
           </p>
 
           <a href="https://calendar.directaiautomation.com/widget/booking/4PMJoT61mkOp3LfT5092" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book Your Free Demo</a>
@@ -173,145 +129,150 @@
     </div>
   </section>
 
-  <!-- CREDENTIALS TIMELINE -->
+  <!-- THE PROBLEM WE SOLVE -->
   <section class="bg-slate-50 py-16 md:py-20">
     <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-12 reveal">
-          <h2 class="text-2xl sm:text-3xl font-bold text-navy mb-3">Career Background</h2>
-          <p class="text-slate-500 max-w-xl mx-auto">Two decades of incident response and digital forensics across the highest-stakes environments in the country.</p>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-10">
-
-          <!-- Federal -->
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
           <div class="reveal">
-            <div class="flex items-center gap-3 mb-6">
-              <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center text-lg">🏛️</div>
-              <h3 class="font-bold text-navy text-lg">Federal & Government</h3>
+            <div class="inline-flex items-center gap-2 rounded-full bg-electric-soft border border-blue-200 px-3.5 py-1.5 text-xs font-semibold text-electric uppercase tracking-wider mb-6">The AI Advantage</div>
+            <h2 class="text-2xl sm:text-3xl font-bold text-navy mb-6">Small Businesses Using AI Are Already Pulling Ahead</h2>
+            <p class="text-slate-600 leading-relaxed mb-5">NYC small businesses lose customers every day to missed calls, slow follow-ups, and manual processes that don't scale. The dentist with a full waiting room who can't answer the phone. The salon owner juggling appointments and Instagram DMs at the same time. The plumber who follows up with leads when he gets a chance — which is never.</p>
+            <p class="text-slate-600 leading-relaxed">The businesses that fix this with AI aren't just keeping up — they're growing faster, working more efficiently, and winning the customers their competitors miss. The numbers make it clear.</p>
+          </div>
+          <div class="reveal grid grid-cols-2 gap-4">
+            <div class="bg-electric-soft border border-blue-200 rounded-2xl p-5 text-center">
+              <div class="text-3xl font-extrabold text-electric mb-1">93%</div>
+              <p class="text-slate-600 text-xs leading-relaxed">Of small businesses using AI report a positive business impact</p>
+              <p class="text-slate-400 text-[10px] mt-1.5">Goldman Sachs, 2026</p>
             </div>
-            <div class="space-y-5">
-              <div class="timeline-item">
-                <p class="font-semibold text-navy text-sm">CISA — Hunt & Incident Response Team</p>
-                <p class="text-slate-500 text-sm mt-0.5">Cybersecurity & Infrastructure Security Agency</p>
-              </div>
-              <div class="timeline-item">
-                <p class="font-semibold text-navy text-sm">Pentagon Computer Incident Response Team</p>
-                <p class="text-slate-500 text-sm mt-0.5">Department of Defense</p>
-              </div>
-              <div class="timeline-item">
-                <p class="font-semibold text-navy text-sm">DoD Cyber Crime Center</p>
-                <p class="text-slate-500 text-sm mt-0.5">Department of Defense</p>
-              </div>
-              <div class="timeline-item">
-                <p class="font-semibold text-navy text-sm">U.S. Department of State CIRT</p>
-                <p class="text-slate-500 text-sm mt-0.5">Computer Incident Response Team</p>
-              </div>
-              <div class="timeline-item">
-                <p class="font-semibold text-navy text-sm">NCUA Incident Response</p>
-                <p class="text-slate-500 text-sm mt-0.5">National Credit Union Administration</p>
-              </div>
-              <div class="timeline-item">
-                <p class="font-semibold text-navy text-sm">2020 Census Bureau SOC</p>
-                <p class="text-slate-500 text-sm mt-0.5">Security Operations Center</p>
-              </div>
+            <div class="bg-electric-soft border border-blue-200 rounded-2xl p-5 text-center">
+              <div class="text-3xl font-extrabold text-electric mb-1">91%</div>
+              <p class="text-slate-600 text-xs leading-relaxed">Of SMBs with AI say it boosts their revenue</p>
+              <p class="text-slate-400 text-[10px] mt-1.5">Salesforce</p>
+            </div>
+            <div class="bg-electric-soft border border-blue-200 rounded-2xl p-5 text-center">
+              <div class="text-3xl font-extrabold text-electric mb-1">84%</div>
+              <p class="text-slate-600 text-xs leading-relaxed">Cite increased efficiency and productivity from AI</p>
+              <p class="text-slate-400 text-[10px] mt-1.5">Goldman Sachs, 2026</p>
+            </div>
+            <div class="bg-electric-soft border border-blue-200 rounded-2xl p-5 text-center">
+              <div class="text-3xl font-extrabold text-electric mb-1">21x</div>
+              <p class="text-slate-600 text-xs leading-relaxed">More likely to qualify a lead within 5 minutes</p>
+              <p class="text-slate-400 text-[10px] mt-1.5">Harvard Business Review</p>
             </div>
           </div>
-
-          <!-- Enterprise -->
-          <div class="reveal">
-            <div class="flex items-center gap-3 mb-6">
-              <div class="w-10 h-10 rounded-xl bg-electric text-white flex items-center justify-center text-lg">🏢</div>
-              <h3 class="font-bold text-navy text-lg">Fortune 500 Enterprise</h3>
-            </div>
-            <div class="space-y-5">
-              <div class="timeline-item">
-                <p class="font-semibold text-navy text-sm">Synchrony Financial — CIRT</p>
-                <p class="text-slate-500 text-sm mt-0.5">Computer Incident Response Team</p>
-              </div>
-              <div class="timeline-item">
-                <p class="font-semibold text-navy text-sm">Biogen — Incident Response Team</p>
-                <p class="text-slate-500 text-sm mt-0.5">Global biopharmaceutical enterprise</p>
-              </div>
-              <div class="timeline-item">
-                <p class="font-semibold text-navy text-sm">E*Trade Financial — CIRT</p>
-                <p class="text-slate-500 text-sm mt-0.5">Computer Incident Response Team</p>
-              </div>
-              <div class="timeline-item mt-8">
-                <p class="font-semibold text-navy text-sm">Author — IR SOPs, Playbooks & Detection Content</p>
-                <p class="text-slate-500 text-sm mt-0.5">Deployed across agency-level and enterprise SOCs</p>
-              </div>
-            </div>
-
-            <!-- AI Security Work -->
-            <div class="mt-10">
-              <div class="flex items-center gap-3 mb-6">
-                <div class="w-10 h-10 rounded-xl bg-teal-600 text-white flex items-center justify-center text-lg">🤖</div>
-                <h3 class="font-bold text-navy text-lg">AI Security Research</h3>
-              </div>
-              <div class="space-y-4">
-                <div class="timeline-item">
-                  <p class="font-semibold text-navy text-sm">AI/LLM Security Portfolio</p>
-                  <p class="text-slate-500 text-sm mt-0.5">Prompt injection, LLM red-teaming, IR playbooks for AI incidents</p>
-                </div>
-                <div class="timeline-item">
-                  <p class="font-semibold text-navy text-sm">Splunk Detection Content for LLM Abuse</p>
-                  <p class="text-slate-500 text-sm mt-0.5">Detection engineering applied to AI system threats</p>
-                </div>
-                <div class="timeline-item">
-                  <p class="font-semibold text-navy text-sm">OWASP, MITRE ATLAS, NIST AI RMF</p>
-                  <p class="text-slate-500 text-sm mt-0.5">Active frameworks cross-reference and applied research</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
     </div>
   </section>
 
-  <!-- WHY IT MATTERS FOR SMALL BUSINESS -->
+  <!-- WHAT WE DO -->
   <section class="bg-white py-16 md:py-20">
     <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-12 reveal">
-          <h2 class="text-2xl sm:text-3xl font-bold text-navy mb-3">Why Your Security Background Matters to <span class="gradient-text">Your Business</span></h2>
-          <p class="text-slate-500 max-w-2xl mx-auto">When you work with Direct AI Automation, you're not just getting software. You're getting someone who has spent 20 years thinking about what happens when systems fail — and building them so they don't.</p>
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-2xl sm:text-3xl font-bold text-navy mb-3">What We Do</h2>
+        <p class="text-slate-500 max-w-2xl mx-auto">We build AI-powered solutions that automate the work costing you time and money — so every lead gets captured, every customer gets followed up with, and your calendar fills itself.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-card reveal text-center">
+          <div class="text-3xl mb-3">📈</div>
+          <h3 class="font-bold text-navy mb-2">Capture More Leads</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Every call, text, and website inquiry captured automatically — day and night.</p>
         </div>
-
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 reveal">
-            <div class="w-11 h-11 rounded-xl bg-electric-soft text-electric flex items-center justify-center text-xl mb-4">🔐</div>
-            <h3 class="font-bold text-navy mb-2">Your Customer Data Is Safe</h3>
-            <p class="text-slate-500 text-sm leading-relaxed">Every system we build handles your customer names, phone numbers, and communications with the same security discipline applied at federal agencies. Your data stays yours — always.</p>
-          </div>
-          <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 reveal" style="transition-delay:0.08s">
-            <div class="w-11 h-11 rounded-xl bg-electric-soft text-electric flex items-center justify-center text-xl mb-4">📋</div>
-            <h3 class="font-bold text-navy mb-2">Compliance Built In</h3>
-            <p class="text-slate-500 text-sm leading-relaxed">SMS compliance (A2P 10DLC, TCPA), HIPAA awareness for medical clients, and data handling best practices aren't afterthoughts — they're built into every system from day one.</p>
-          </div>
-          <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 reveal" style="transition-delay:0.16s">
-            <div class="w-11 h-11 rounded-xl bg-electric-soft text-electric flex items-center justify-center text-xl mb-4">🧠</div>
-            <h3 class="font-bold text-navy mb-2">Systematic. Not Guesswork.</h3>
-            <p class="text-slate-500 text-sm leading-relaxed">Federal incident response demands precise, documented, repeatable processes. That same discipline is how we build, test, and deliver your automation — so it works the first time.</p>
-          </div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-card reveal text-center" style="transition-delay:0.08s">
+          <div class="text-3xl mb-3">⚡</div>
+          <h3 class="font-bold text-navy mb-2">Respond Instantly</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Every lead followed up within 60 seconds automatically — before they call your competitor.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-card reveal text-center" style="transition-delay:0.16s">
+          <div class="text-3xl mb-3">📅</div>
+          <h3 class="font-bold text-navy mb-2">Fill Your Calendar</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Appointments booked automatically into your calendar — no back-and-forth needed.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-card reveal text-center" style="transition-delay:0.24s">
+          <div class="text-3xl mb-3">💰</div>
+          <h3 class="font-bold text-navy mb-2">Grow Revenue</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">More leads captured, more appointments booked, more customers converted — consistently.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- MISSION STATEMENT -->
-  <section class="bg-navy text-white py-16 md:py-20">
+  <!-- HOW WE DO IT DIFFERENTLY -->
+  <section class="bg-slate-50 py-16 md:py-20">
+    <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-2xl sm:text-3xl font-bold text-navy mb-3">How We Do It Differently</h2>
+        <p class="text-slate-500 max-w-xl mx-auto">Every automation we build is designed to deliver measurable business results — not just technology for technology's sake.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-card reveal">
+          <div class="w-11 h-11 rounded-xl bg-electric-soft text-electric flex items-center justify-center text-xl mb-4">🎯</div>
+          <h3 class="font-bold text-navy mb-2">Built for Your Business</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Every system is custom-configured for your specific services, customers, and workflow. Nothing generic, nothing off-the-shelf.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-card reveal" style="transition-delay:0.08s">
+          <div class="w-11 h-11 rounded-xl bg-electric-soft text-electric flex items-center justify-center text-xl mb-4">⚙️</div>
+          <h3 class="font-bold text-navy mb-2">Repeatable Processes</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">We build documented, reliable automations that work consistently — every lead, every time, without manual intervention.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-card reveal" style="transition-delay:0.16s">
+          <div class="w-11 h-11 rounded-xl bg-electric-soft text-electric flex items-center justify-center text-xl mb-4">📊</div>
+          <h3 class="font-bold text-navy mb-2">Focused on Growth</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Every feature we configure is tied to a business outcome — more leads, more bookings, more revenue. That's the only metric that matters.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE SERVE -->
+  <section class="bg-white py-16 md:py-20">
+    <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-2xl sm:text-3xl font-bold text-navy mb-3">Who We Serve</h2>
+        <p class="text-slate-500 max-w-xl mx-auto">Local service businesses across all five boroughs of New York City.</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-5xl mx-auto">
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 text-center reveal">
+          <div class="text-2xl mb-2">🏥</div>
+          <p class="font-semibold text-navy text-sm">Medical &amp; Dental</p>
+        </div>
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 text-center reveal" style="transition-delay:0.06s">
+          <div class="text-2xl mb-2">🔧</div>
+          <p class="font-semibold text-navy text-sm">Home Services</p>
+        </div>
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 text-center reveal" style="transition-delay:0.12s">
+          <div class="text-2xl mb-2">💆</div>
+          <p class="font-semibold text-navy text-sm">Wellness &amp; Beauty</p>
+        </div>
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 text-center reveal" style="transition-delay:0.18s">
+          <div class="text-2xl mb-2">🛡️</div>
+          <p class="font-semibold text-navy text-sm">Insurance &amp; Financial</p>
+        </div>
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 text-center reveal" style="transition-delay:0.24s">
+          <div class="text-2xl mb-2">🔩</div>
+          <p class="font-semibold text-navy text-sm">Auto Repair &amp; Mechanics</p>
+        </div>
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 text-center reveal" style="transition-delay:0.30s">
+          <div class="text-2xl mb-2">⚖️</div>
+          <p class="font-semibold text-navy text-sm">Legal</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION / FINAL CTA -->
+  <section class="hero-bg text-white py-16 md:py-20">
     <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto text-center reveal">
         <div class="text-5xl mb-6">🗽</div>
-        <h2 class="text-2xl sm:text-3xl font-bold mb-6">Built for NYC. Built to Last.</h2>
+        <h2 class="text-2xl sm:text-3xl font-bold mb-6">NYC Small Businesses Deserve to Grow</h2>
         <p class="text-slate-300 text-lg leading-relaxed mb-6">
-          New York City small businesses are the backbone of this city. They work harder than anyone, compete against larger operations with bigger budgets, and often lose customers not because of bad service — but because nobody answered the phone.
+          This city runs on small businesses. The people who show up early, stay late, and pour everything into their work deserve solutions that work just as hard. Direct AI Automation exists to give every local business owner in NYC the competitive edge that enterprise companies have — AI-powered solutions that capture every lead, follow up automatically, and turn inquiries into revenue.
         </p>
         <p class="text-slate-300 text-lg leading-relaxed mb-10">
-          Direct AI Automation exists to close that gap. To give the Brooklyn dentist, the Queens salon owner, the Bronx plumber — the same 24/7 lead capture and follow-up systems that enterprise companies use. At a price that makes sense for a small business.
+          If your business is ready to grow — we're ready to build it.
         </p>
         <a href="https://calendar.directaiautomation.com/widget/booking/4PMJoT61mkOp3LfT5092" target="_blank" rel="noopener noreferrer" class="btn btn-primary text-lg px-10 py-4">Book Your Free Demo</a>
         <p class="text-slate-500 text-xs mt-4">No credit card required · Setup in days · Cancel anytime</p>
